@@ -1,3 +1,9 @@
 {
-  "clientURL": "https://icjia.illinois.gov/irb/"
+  "clientURL": "https://icjia.illinois.gov/irb/",
+  "namespace": "irb-",
+  "siteTitle": "Institutional Review Board",
+  "siteTitleMobile": "ICJIA IRB",
+  "homeHeading": "ICJIA's Institutional Review Board",
+  "githubURL": "https://github.com/ICJIA/icjia-irb",
+  "siteDescription": "The Institutional Review Board (IRB) is a committee formally appointed by the Director of the Illinois Criminal Justice Information Authority (ICJIA)."
 }

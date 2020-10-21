@@ -4,11 +4,10 @@
       <v-row>
         <v-col cols="12" md="9" class="markdown-body">
           <h1>{{ doc.title }}</h1>
-          {{ doc.toc }}
           <nuxt-content :document="doc" />
         </v-col>
         <v-col cols="12" md="3">
-          <toc :toc="doc.toc" :heading="doc.title"></toc>
+          <toc :toc="doc.toc"></toc>
         </v-col>
       </v-row>
     </v-container>
@@ -18,13 +17,19 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const doc = await $content('index').fetch()
+    const doc = await $content(params.slug).fetch()
     return { doc }
   },
   head() {
     return {
-      titleTemplate: `%s`,
-      title: 'Home',
+      title: `${this.doc.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.doc.description}`,
+        },
+      ],
     }
   },
 }

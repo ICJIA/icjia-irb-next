@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <AppNav></AppNav>
-    <nuxt class="mt-5" />
+    <nuxt class="" style="min-height: 100vh !important" />
     <AppFooter></AppFooter>
   </v-app>
 </template>

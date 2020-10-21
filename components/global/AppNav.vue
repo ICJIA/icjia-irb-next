@@ -23,7 +23,7 @@
           >RMATION</span
         ></span
       > -->
-      <span style="" class="agency hover">DEATH IN CUSTODY REPORTING ACT</span>
+      <span style="" class="agency hover">INSTITUTIONAL REVIEW BOARD</span>
     </v-toolbar-title>
 
     <v-spacer />

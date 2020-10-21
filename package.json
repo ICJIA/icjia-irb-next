@@ -27,7 +27,9 @@
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.31",
     "nuxt": "^2.14.7",
-    "nuxt-material-design-icons": "^1.0.4"
+    "nuxt-material-design-icons": "^1.0.4",
+    "remark-footnotes": "^2.0.0",
+    "remark-parse": "^9.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^4.0.0",

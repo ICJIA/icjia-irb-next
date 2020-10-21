@@ -4,11 +4,9 @@ const PRODUCTION_BASE_PATH = '/irb/'
 function addBase(url) {
   const base =
     process.env.NODE_ENV === 'production' ? PRODUCTION_BASE_PATH : '/'
-  console.log(base + url)
+  // console.log(base + url)
   return base + url
 }
-
-addBase('test')
 
 export default {
   /*
@@ -45,7 +43,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/app.css', '@/assets/github-markdown.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -87,14 +85,14 @@ export default {
     '@nuxt/content',
     '@nuxtjs/dotenv',
     'nuxt-material-design-icons',
-    '@nuxtjs/sitemap',
+    // '@nuxtjs/sitemap',
   ],
-  sitemap: {
-    hostname: 'https://icjia.illinois.gov/',
-    gzip: true,
-    exclude: [],
-    routes: [],
-  },
+  // sitemap: {
+  //   hostname: 'https://icjia.illinois.gov/irb/',
+  //   gzip: true,
+  //   exclude: [],
+  //   routes: [],
+  // },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -129,5 +127,17 @@ export default {
   },
   router: {
     base: process.env.NODE_ENV === 'production' ? PRODUCTION_BASE_PATH : '/',
+  },
+  generate: {
+    async routes() {
+      // next comment to make VSCode ignore the "error"
+      // @ts-ignore
+      const { $content } = require('@nuxt/content')
+      const pages = await $content().only(['path']).fetch()
+      // const meetings = await $content('meetings').only(['path']).fetch()
+      // const files = [...pages,...meetings,]
+      const files = [...pages]
+      return files.map((file) => (file.path === '/index' ? '/' : file.path))
+    },
   },
 }
