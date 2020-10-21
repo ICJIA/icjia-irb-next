@@ -1,8 +1,14 @@
 ---
 title: "Members and Staff"
 description: "Descriptions of ICJIA's IRB members and staff."
-createdAt: 2020-10-21
+menuTitle: "Members & Staff"
 showToc: true
+showInSitemap: true
+showInFooter: true
+showInNav: true
+showInSidebar: true
+createdAt: "2020-10-21"
+menuRank: 200
 ---
 
 Below is a description of ICJIA's IRB members and staff.

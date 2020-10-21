@@ -1,8 +1,14 @@
 ---
 title: "Additional Resources"
 description: "Additional resources for ICJIA's IRB."
-createdAt: 2020-10-21
+menuTitle: "Resources"
 showToc: false
+showInSitemap: true
+showInFooter: true
+showInNav: true
+showInSidebar: true
+createdAt: "2020-10-21"
+menuRank: 500
 ---
 
 Many other resources exist to provide guidance on IRB related issues. Below are some useful outside resources:

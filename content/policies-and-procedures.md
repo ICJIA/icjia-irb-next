@@ -1,8 +1,14 @@
 ---
 title: "Policies and Procedures"
 description: "Policies and procedures for ICJIA's IRB."
-createdAt: 2020-10-21
+menuTitle: "Policies"
 showToc: true
+showInSitemap: true
+showInFooter: true
+showInNav: true
+showInSidebar: true
+createdAt: "2020-10-21"
+menuRank: 300
 ---
 
 ## Overview of ICJIA's IRB Procedures

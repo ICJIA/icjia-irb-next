@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <AppNav></AppNav>
+    <AppSidebar></AppSidebar>
     <nuxt class="" style="min-height: 100vh !important" />
     <AppFooter></AppFooter>
   </v-app>

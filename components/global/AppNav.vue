@@ -1,11 +1,11 @@
 <template>
   <v-app-bar color="white" fixed height="90" class="noprint" app>
-    <!-- <v-app-bar-nav-icon
+    <v-app-bar-nav-icon
       aria-label="Menu"
       style="color: black"
       large
       @click="toggleDrawer"
-    /> -->
+    />
     <div style="width: 15px" />
     <img
       src="~static/icjia-logo.png"
@@ -33,7 +33,7 @@
 <script>
 /* eslint-disable vue/no-use-v-if-with-v-for */
 
-// import { EventBus } from '@/event-bus'
+import { EventBus } from '@/event-bus'
 export default {
   data() {
     return {
@@ -46,9 +46,9 @@ export default {
     // console.log('STATIC_PATH=', STATIC_PATH)
   },
   methods: {
-    // toggleDrawer() {
-    //   EventBus.$emit("toggleDrawer");
-    // },
+    toggleDrawer() {
+      EventBus.$emit('toggleDrawer')
+    },
     logoWidth() {
       // console.log(this.$vuetify.breakpoint);
       if (this.$vuetify.breakpoint.xs) {
