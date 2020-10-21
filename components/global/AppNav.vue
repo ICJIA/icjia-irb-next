@@ -54,7 +54,11 @@ export default {
     },
     gotoHome() {
       // console.log(this.$route)
-      this.$router.push('/')
+      if (this.$route.path === '/') {
+        this.$vuetify.goTo(0)
+      } else {
+        this.$router.push('/')
+      }
     },
   },
 }

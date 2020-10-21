@@ -2,7 +2,7 @@
   <v-app>
     <div style="min-height: 100vh !important">
       <AppNav></AppNav>
-      <!-- <AppSidebar></AppSidebar> -->
+      <AppSidebar></AppSidebar>
       <nuxt class="" />
     </div>
     <AppFooter></AppFooter>
