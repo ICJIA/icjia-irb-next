@@ -30,9 +30,9 @@
 export default {
   async fetch() {
     if (this.q.length) {
-      this.response = await this.$content()
+      this.response = await this.$content('', { deep: true })
         .only(['title', 'description'])
-        .limit(10)
+        .limit(15)
         .search(this.q)
         .fetch()
     }
