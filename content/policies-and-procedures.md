@@ -1,4 +1,9 @@
-# Policies and Procedures
+---
+title: "Policies and Procedures"
+description: "Policies and procedures for ICJIA's IRB."
+createdAt: 2020-10-21
+showToc: true
+---
 
 ## Overview of ICJIA's IRB Procedures
 
@@ -17,6 +22,7 @@ ICJIA researchers (staff and interns) and IRB members are required to receive a 
 ## Forms and Templates
 
 Below you will find links to blank forms that can be completed and submitted to the IRB for review, based on the type of application you are submitting:
+
 * [Not Research Application](NotResearchTemplate.pdf)
 -- To help determine if your projects is considered not research, please refer to this [guide](NotResearchGuide.pdf)
 * [Exempt Application (Form 1)](InitialApplicationTemplate.pdf) and [Exempt Application (Form 2)](ExemptTemplate.pdf)
@@ -33,6 +39,7 @@ Below you will find links to blank forms that can be completed and submitted to 
 
 
 ### Privacy Certificates and Certificates of Confidentiality 
+
 In situations where research projects expose particpants to greater than minimal risk, or as requested, researchers may obtain a privacy certificate or certificate of confidentiality. For more information on what these certificates do, and the steps to obtain them, [click here](PrivacyCertificateSteps.pdf). To obtain a privacy certificate template, [click here](PrivacyCertificateTemplate.doc).
 
 

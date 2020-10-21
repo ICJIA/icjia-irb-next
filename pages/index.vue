@@ -4,7 +4,6 @@
       <v-row>
         <v-col cols="12" md="9" class="markdown-body">
           <h1>{{ doc.title }}</h1>
-          {{ doc.toc }}
           <nuxt-content :document="doc" />
         </v-col>
         <v-col cols="12" md="3">

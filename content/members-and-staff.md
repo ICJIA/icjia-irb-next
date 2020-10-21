@@ -1,4 +1,9 @@
-# Members and Staff
+---
+title: "Members and Staff"
+description: "Descriptions of ICJIA's IRB members and staff."
+createdAt: 2020-10-21
+showToc: true
+---
 
 Below is a description of ICJIA's IRB members and staff.
 

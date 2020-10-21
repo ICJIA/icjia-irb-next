@@ -103,7 +103,7 @@ export default {
       }
       const tocLinks = document.querySelectorAll('.tocItem')
       const tocHeadings = document.querySelectorAll('h2')
-      console.log(tocLinks)
+      // console.log(tocLinks)
       if (scrollPosition < 100) {
         tocLinks.forEach((link) => {
           link.classList.remove('visible')
