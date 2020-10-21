@@ -22,6 +22,9 @@
     </v-toolbar-title>
 
     <v-spacer />
+    <v-btn icon to="/search">
+      <v-icon>mdi-magnify</v-icon>
+    </v-btn>
   </v-app-bar>
 </template>
 
@@ -53,7 +56,7 @@ export default {
       }
     },
     gotoHome() {
-      // console.log(this.$route)
+      // EventBus.$emit('closeDrawer')
       if (this.$route.path === '/') {
         this.$vuetify.goTo(0)
       } else {

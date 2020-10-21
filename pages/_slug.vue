@@ -22,12 +22,12 @@ export default {
   },
   head() {
     return {
-      title: `${this.doc.title}`,
+      title: this.doc.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `${this.doc.description}`,
+          content: this.doc.description,
         },
       ],
     }

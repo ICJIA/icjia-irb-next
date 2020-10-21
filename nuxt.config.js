@@ -95,9 +95,8 @@ export default {
     routes: async () => {
       const { $content } = require('@nuxt/content')
       const pages = await $content().only(['path']).fetch()
-      // const meetings = await $content('meetings').only(['path']).fetch()
-      // const files = [...pages,...meetings,]
-      const files = [...pages]
+      const meetings = await $content('meetings').only(['path']).fetch()
+      const files = [...pages, ...meetings]
       return files.map((file) => (file.path === '/index' ? '/' : file.path))
     },
   },
@@ -142,9 +141,8 @@ export default {
       // @ts-ignore
       const { $content } = await require('@nuxt/content')
       const pages = await $content().only(['path']).fetch()
-      // const meetings = await $content('meetings').only(['path']).fetch()
-      // const files = [...pages,...meetings,]
-      const files = [...pages]
+      const meetings = await $content('meetings').only(['path']).fetch()
+      const files = [...pages, ...meetings]
       return files.map((file) => (file.path === '/index' ? '/' : file.path))
     },
   },
