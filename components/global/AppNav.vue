@@ -7,10 +7,11 @@
       @click="toggleDrawer"
     />
     <div style="width: 15px" />
-    <img
-      src="~static/icjia-logo.png"
+    <v-img
+      :src="require('@/static/icjia-logo.png')"
+      :lazy-src="require('@/static/icjia-logo-min.png')"
       alt="Illinois Criminal Justice Information Authority"
-      :width="logoWidth()"
+      max-width="90"
       style="margin-left: -5px; margin-right: 8px"
       class="hover"
       @click="gotoHome"
