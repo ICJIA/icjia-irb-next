@@ -1,4 +1,5 @@
 import webpack from 'webpack'
+
 const PRODUCTION_BASE_PATH = '/irb/'
 
 function addBase(url) {
@@ -85,14 +86,21 @@ export default {
     '@nuxt/content',
     '@nuxtjs/dotenv',
     'nuxt-material-design-icons',
-    // '@nuxtjs/sitemap',
+    '@nuxtjs/sitemap',
   ],
-  // sitemap: {
-  //   hostname: 'https://icjia.illinois.gov/irb/',
-  //   gzip: true,
-  //   exclude: [],
-  //   routes: [],
-  // },
+  sitemap: {
+    hostname: 'https://icjia.illinois.gov/',
+    gzip: true,
+    exclude: [],
+    routes: async () => {
+      const { $content } = require('@nuxt/content')
+      const pages = await $content().only(['path']).fetch()
+      // const meetings = await $content('meetings').only(['path']).fetch()
+      // const files = [...pages,...meetings,]
+      const files = [...pages]
+      return files.map((file) => (file.path === '/index' ? '/' : file.path))
+    },
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -132,7 +140,7 @@ export default {
     async routes() {
       // next comment to make VSCode ignore the "error"
       // @ts-ignore
-      const { $content } = require('@nuxt/content')
+      const { $content } = await require('@nuxt/content')
       const pages = await $content().only(['path']).fetch()
       // const meetings = await $content('meetings').only(['path']).fetch()
       // const files = [...pages,...meetings,]

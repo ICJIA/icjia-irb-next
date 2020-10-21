@@ -18,12 +18,6 @@
     />&nbsp;&nbsp;&nbsp;&nbsp;
 
     <v-toolbar-title class="heavy hover" @click="gotoHome">
-      <!-- <span style="" class="agency hover"
-        >GRANT INFO<span
-          v-if="!$vuetify.breakpoint.xs && !$vuetify.breakpoint.sm"
-          >RMATION</span
-        ></span
-      > -->
       <span style="" class="agency hover">INSTITUTIONAL REVIEW BOARD</span>
     </v-toolbar-title>
 
