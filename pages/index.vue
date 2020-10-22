@@ -52,7 +52,7 @@ export default {
     const now = new Date().toJSON().split('T')[0]
     this.doc = await this.$content('index').fetch()
     this.meetings = await this.$content('meetings')
-      .only(['title', 'description', 'scheduled', 'slug', 'markdown'])
+      .only(['title', 'description', 'scheduled', 'slug', 'markdown', 'path'])
       .where({ scheduled: { $gt: now } })
       .sortBy('scheduled', 'desc')
       .fetch()
