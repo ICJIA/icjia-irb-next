@@ -1,13 +1,10 @@
 import webpack from 'webpack'
 
-const PRODUCTION_BASE_PATH = '/irb'
-
-function addBase(url) {
-  const base =
-    process.env.NODE_ENV === 'production' ? PRODUCTION_BASE_PATH : '/'
-  // console.log(base + url)
-  return base + url
-}
+// function addBase(url) {
+//   const base = process.env.NODE_ENV === 'production' ? '/irb/' : '/'
+//   // console.log(base + url)
+//   return base + url
+// }
 
 export default {
   /*
@@ -35,7 +32,7 @@ export default {
     ],
     script: [],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: addBase('favicon.ico') },
+      { rel: 'icon', type: 'image/x-icon', href: '/irb/favicon.ico' },
       // {
       //   rel: 'stylesheet',
       //   href: 'https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css',
@@ -128,13 +125,13 @@ export default {
     extend(config, { isDev }) {
       config.plugins.push(
         new webpack.DefinePlugin({
-          STATIC_PATH: JSON.stringify(isDev ? '' : PRODUCTION_BASE_PATH),
+          STATIC_PATH: JSON.stringify(isDev ? '' : '/irb/'),
         })
       )
     },
   },
   router: {
-    base: process.env.NODE_ENV === 'production' ? PRODUCTION_BASE_PATH : '/',
+    base: '/irb/',
   },
   generate: {
     async routes() {
@@ -144,7 +141,11 @@ export default {
       const pages = await $content().only(['path']).fetch()
       const meetings = await $content('meetings').only(['path']).fetch()
       const files = [...pages, ...meetings]
-      return files.map((file) => (file.path === '/index' ? '/' : file.path))
+      const path = files.map((file) =>
+        file.path === '/index' ? '/' : '' + file.path
+      )
+      console.log(path)
+      return path
     },
   },
 }
