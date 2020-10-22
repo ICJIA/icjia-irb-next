@@ -130,9 +130,9 @@ export default {
       )
     },
   },
-  router: {
-    base: '/irb/',
-  },
+  // router: {
+  //   base: '/irb/',
+  // },
   generate: {
     async routes() {
       // next comment to make VSCode ignore the "error"
@@ -144,7 +144,7 @@ export default {
       const path = files.map((file) =>
         file.path === '/index' ? '/' : '' + file.path
       )
-      console.log(path)
+      // console.log(path)
       return path
     },
   },
