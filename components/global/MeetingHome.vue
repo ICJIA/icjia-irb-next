@@ -2,7 +2,7 @@
   <div>
     <div v-if="meetings && meetings.length">
       <div v-for="(meeting, index) in meetings" :key="index">
-        <MeetingCard :meeting="meeting"></MeetingCard>
+        <MeetingCard :data="meeting"></MeetingCard>
       </div>
     </div>
     <div v-else>
@@ -25,10 +25,10 @@
 export default {
   async fetch() {
     const now = new Date().toJSON().split('T')[0]
-    console.log('now: ', now)
+    // console.log(now)
     this.meetings = await this.$content('meetings')
       .only(['title', 'description', 'scheduled', 'slug', 'markdown'])
-
+      .where({ scheduled: { $gt: now } })
       .sortBy('scheduled', 'asc')
       .fetch()
     this.meetings = this.meetings.map((meeting) => ({

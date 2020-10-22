@@ -11,7 +11,29 @@
             <toc :toc="doc.toc"></toc>
           </v-col>
           <v-col cols="12" md="9">
-            {{ meetings }}
+            <div v-if="meetings && meetings.length">
+              <div
+                v-for="(meeting, index) in meetings"
+                :key="index"
+                style="margin-top: -20px"
+                class="mb-10"
+              >
+                <MeetingCard :meeting="meeting"></MeetingCard>
+              </div>
+            </div>
+            <div v-else>
+              <div
+                style="font-weight: bold; font-size: 20px; color: #555"
+                class="text-center mt-10"
+              >
+                No upcoming meetings scheduled.
+              </div>
+            </div>
+            <div class="text-center">
+              <v-btn x-small to="/meetings" outlined class="mt-10"
+                >Archive <v-icon x-small right>chevron_right</v-icon></v-btn
+              >
+            </div>
           </v-col>
           <div></div>
         </v-row>
@@ -27,9 +49,11 @@
 // import { EventBus } from '@/event-bus'
 export default {
   async fetch() {
+    const now = new Date().toJSON().split('T')[0]
     this.doc = await this.$content('index').fetch()
     this.meetings = await this.$content('meetings')
       .only(['title', 'description', 'scheduled', 'slug', 'markdown'])
+      .where({ scheduled: { $gt: now } })
       .sortBy('scheduled', 'desc')
       .fetch()
     this.meetings = this.meetings.map((meeting) => ({

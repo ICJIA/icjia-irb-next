@@ -40,12 +40,12 @@
             @click.prevent="meeting.show = !meeting.show"
             v-html="render(meeting.markdown)"
           ></div>
-          <!-- <div class="text-right mt-3">
+          {{ meeting.path }}
+          <div class="text-right mt-3">
             <v-btn x-small @click.prevent="$router.push(meeting.path)"
               >Link <v-icon right>link</v-icon></v-btn
             >
-          </div> -->
-          {{ meeting }}
+          </div>
         </div>
       </v-slide-y-transition>
     </v-card>
