@@ -1,6 +1,6 @@
 import webpack from 'webpack'
 
-const PRODUCTION_BASE_PATH = '/irb/'
+const PRODUCTION_BASE_PATH = '/irb'
 
 function addBase(url) {
   const base =
