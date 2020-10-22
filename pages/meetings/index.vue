@@ -5,28 +5,10 @@
         <v-row>
           <v-col cols="12" class="markdown-body">
             <h1>Meetings</h1>
-            <!-- <div v-if="meetings && meetings.length">
-              <div v-for="(meeting, index) in meetings" :key="index">
-                <MeetingCard :data="meeting"></MeetingCard>
-              </div>
-            </div>
-            <div v-else>
-              <div
-                style="font-weight: bold; font-size: 20px; color: #555"
-                class="text-center mt-10"
-              >
-                No upcoming meetings scheduled.
-              </div>
-            </div> -->
-            <div v-if="meetings">
-              {{ meetings }}
-            </div>
-            <div v-else>
-              <Loader></Loader>
+            <div v-for="(meeting, index) in meetings" :key="index">
+              <MeetingCard :meeting="meeting"></MeetingCard>
             </div>
           </v-col>
-
-          <div></div>
         </v-row>
       </v-container>
       <v-container v-else>
@@ -41,7 +23,7 @@ export default {
   async fetch() {
     // console.log(now)
     this.meetings = await this.$content('meetings')
-      .only(['title', 'description', 'scheduled', 'slug', 'markdown'])
+      .only(['title', 'description', 'scheduled', 'slug', 'markdown', 'path'])
       .sortBy('scheduled', 'desc')
       .fetch()
     this.meetings = this.meetings.map((meeting) => ({

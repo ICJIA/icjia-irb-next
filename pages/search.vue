@@ -141,7 +141,7 @@ export default {
 .highlight {
   background: #ffff00;
   font-weight: 900;
-  padding: 2px;
+  padding: 0px;
   text-transform: uppercase;
 }
 </style>
