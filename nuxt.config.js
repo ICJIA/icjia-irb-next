@@ -33,6 +33,7 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
+    script: [],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: addBase('favicon.ico') },
       // {

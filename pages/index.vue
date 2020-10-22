@@ -23,17 +23,18 @@
 <script>
 // import { EventBus } from '@/event-bus'
 export default {
+  async fetch() {
+    this.doc = await this.$content('index').fetch()
+    this.isLoading = false
+  },
   data() {
     return {
       isLoading: true,
       doc: null,
     }
   },
-
-  async created() {
-    this.doc = await this.$content('index').fetch()
-    this.isLoading = false
-  },
+  created() {},
+  mounted() {},
 
   head() {
     return {
