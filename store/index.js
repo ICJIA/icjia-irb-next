@@ -1,10 +1,15 @@
 export const state = () => ({
   appConfig: () => {},
+  searchIndex: () => [],
 })
 
 export const mutations = {
   setAppConfig(state, config) {
     state.appConfig = config
+  },
+  setSearchIndex(state, searchIndex) {
+    state.searchIndex = searchIndex
+    // console.log('search: ', state.searchIndex)
   },
 }
 
@@ -21,5 +26,8 @@ export const actions = {
   ) {
     const config = await require('@/config.json')
     commit('setAppConfig', config)
+
+    const searchIndex = await require('@/static/search.json')
+    commit('setSearchIndex', searchIndex)
   },
 }
