@@ -3,13 +3,14 @@
     <client-only>
       <v-container v-if="doc">
         <v-row>
-          <v-col cols="12" md="9" class="markdown-body">
+          <!-- <v-col cols="12" md="9" class="markdown-body">
             <h1>{{ doc.title }}</h1>
             <nuxt-content :document="doc" />
           </v-col>
           <v-col cols="12" md="3">
-            <toc :toc="doc.toc" :heading="doc.title"></toc>
-          </v-col>
+            <toc :toc="doc.toc"></toc>
+          </v-col> -->
+          {{ doc }}
           <div></div>
         </v-row>
       </v-container>
@@ -35,12 +36,12 @@ export default {
   },
   head() {
     return {
-      title: this.doc.title,
+      title: 'test',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.doc.description,
+          content: 'description',
         },
       ],
     }
