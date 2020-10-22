@@ -7,34 +7,35 @@
     >
       <div
         class="meetingDate text-right"
-        @click.prevent="data.show = !data.show"
+        @click.prevent="meeting.show = !meeting.show"
       >
-        {{ formatDate(data.scheduled) }}
+        {{ formatDate(meeting.scheduled) }}
       </div>
-      <div class="meetingTitle" @click.prevent="data.show = !data.show">
-        {{ data.title }}
+      <div class="meetingTitle" @click.prevent="meeting.show = !meeting.show">
+        {{ meeting.title }}
       </div>
 
       <div
-        v-if="!data.show"
+        v-if="!meeting.show"
         class="meetingDescription mt-3"
-        @click.prevent="data.show = !data.show"
+        @click.prevent="meeting.show = !meeting.show"
       >
-        {{ data.description }}
+        {{ meeting.description }}
       </div>
 
       <v-slide-y-transition>
-        <div v-show="data.show" class="py-3 mt-2">
+        <div v-show="meeting.show" class="py-3 mt-2">
           <div
             class="mt-2 pl-5 markdown-body meetingCard"
-            @click.prevent="data.show = !data.show"
-            v-html="render(data.markdown)"
+            @click.prevent="meeting.show = !meeting.show"
+            v-html="render(meeting.markdown)"
           ></div>
-          <div class="text-right mt-3">
-            <v-btn x-small @click.prevent="$router.push(data.path)"
+          <!-- <div class="text-right mt-3">
+            <v-btn x-small @click.prevent="$router.push(meeting.path)"
               >Link <v-icon right>link</v-icon></v-btn
             >
-          </div>
+          </div> -->
+          {{ meeting }}
         </div>
       </v-slide-y-transition>
     </v-card>
@@ -46,7 +47,7 @@ import { format } from 'date-fns'
 import { renderToHtml } from '@/services/markdown'
 export default {
   props: {
-    data: {
+    meeting: {
       type: Object,
       default: () => {},
     },
