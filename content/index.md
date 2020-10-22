@@ -32,7 +32,3 @@ The IRB fulfills ICJIA’s contract with the federal Office of Human Research Pr
 ## IRB Registration Information
 
 ICJIA’s IRB is [registered](https://ohrp.cit.nih.gov/search/IrbDtl.aspx) with the U.S. Department of Health and Human Services (IRB00010583) and the Federal-wide Assurance (FWA) for the Protection of Human Subjects (FWA00024306).
-
-## Upcoming Meetings
-
-<MeetingHome></MeetingHome>
