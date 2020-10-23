@@ -1,5 +1,6 @@
 {
   "clientURL": "https://icjia.illinois.gov/irb/",
+  "base": "/irb",
   "namespace": "irb-",
   "siteTitle": "Institutional Review Board",
   "siteTitleMobile": "ICJIA IRB",

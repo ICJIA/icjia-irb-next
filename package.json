@@ -9,12 +9,12 @@
   },
   "scripts": {
     "dev": "node generateSearchIndex && DEPLOY_ENV=DEV nuxt",
-    "build": "DEPLOY_ENV=GEN nuxt generate && npm run banner",
+    "build": "node generateSearchIndex && node generateApi && DEPLOY_ENV=GEN nuxt generate && npm run banner",
     "start": "nuxt start",
-    "generate": "node generateSearchIndex && DEPLOY_ENV=GEN nuxt generate && npm run banner",
+    "generate": "node generateSearchIndex && node generateApi && DEPLOY_ENV=GEN nuxt generate && npm run banner",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "npm run lint:js",
-    "scripts": "node generateSearchIndex",
+    "scripts": "node generateSearchIndex && node generateApi",
     "banner": "node generateBuildInfo.js",
     "version": "auto-changelog -p --commit-limit false --sort-commits date && git add CHANGELOG.md"
   },
