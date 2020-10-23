@@ -20,7 +20,7 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
-    titleTemplate: 'ICJIA IRB | %s',
+    titleTemplate: 'IRB | %s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -87,7 +87,7 @@ export default {
     '@nuxtjs/sitemap',
   ],
   sitemap: {
-    hostname: 'https://icjia.illinois.gov/',
+    hostname: 'https://irb.icjia.cloud/',
     gzip: true,
     exclude: [],
     routes: async () => {

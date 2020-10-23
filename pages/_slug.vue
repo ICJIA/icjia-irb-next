@@ -34,9 +34,16 @@ export default {
       doc: null,
     }
   },
+  methods: {
+    getTitle() {
+      if (!this.isLoading) {
+        return this.doc.title
+      }
+    },
+  },
   head() {
     return {
-      title: 'test',
+      title: this.getTitle(this.doc),
       meta: [
         {
           hid: 'description',

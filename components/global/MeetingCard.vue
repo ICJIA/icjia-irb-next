@@ -3,7 +3,7 @@
     <v-card
       elevation="1"
       color="grey lighten-5"
-      class="mt-6 px-5 py-3 meetingCard"
+      class="mt-6 px-5 pt-3 pb-8 meetingCard"
       @click.native="meeting.show = !meeting.show"
     >
       <div v-if="meeting.scheduled" class="meetingDate text-right">

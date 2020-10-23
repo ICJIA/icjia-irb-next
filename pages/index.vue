@@ -75,7 +75,7 @@ export default {
   head() {
     return {
       titleTemplate: `%s`,
-      title: 'Home',
+      title: 'IRB Home',
     }
   },
 }
