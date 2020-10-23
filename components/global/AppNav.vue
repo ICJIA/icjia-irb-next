@@ -1,7 +1,7 @@
 <template>
   <v-app-bar color="white" fixed height="90" class="noprint" app>
     <v-app-bar-nav-icon
-      aria-label="Menu"
+      aria-label="Toggle Menu"
       style="color: black"
       large
       @click="toggleDrawer"
@@ -45,7 +45,7 @@
         <span v-else style="font-size: 14px">{{ item.title }}</span>
       </v-btn>
     </div>
-    <v-btn icon to="/search/">
+    <v-btn icon to="/search/" aria-label="Search">
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
   </v-app-bar>
