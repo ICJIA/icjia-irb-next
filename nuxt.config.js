@@ -131,7 +131,7 @@ export default {
     },
   },
   router: {
-    base: '/irb/',
+    base: '/irb',
   },
   generate: {
     async routes() {
