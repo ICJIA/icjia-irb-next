@@ -11,6 +11,16 @@
 <script>
 export default {
   created() {},
+  head() {
+    return {
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://icjia.illinois.gov/irb' + this.$route.path,
+        },
+      ],
+    }
+  },
 }
 </script>
 
