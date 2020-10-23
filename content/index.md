@@ -2,14 +2,13 @@
 title: "ICJIA's Institutional Review Board"
 description: 'The Institutional Review Board (IRB) is a committee formally appointed by the Director of the Illinois Criminal Justice Information Authority (ICJIA). The IRB works to protect the rights of human subjects involved in research by reviewing all research activities involving human subjects conducted by ICJIA staff.'
 menuTitle: 'Home'
-createdAt: 2020-10-21
+createdAt: "2020-10-21"
 showToc: true
 showInSitemap: true
 tocHeading: 'Navigation'
 showInFooter: true
-dividerAfter: false
 showInNav: false
-showInSidebar: true
+showInSidebar: false
 menuRank: 0
 ---
 

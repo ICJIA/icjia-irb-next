@@ -6,23 +6,41 @@
     disable-resize-watcher
     color="grey lighten-4"
   >
-    <!-- <v-list dense class="mt-5">
-      <div v-for="item in sidebarItems" :key="item.title">
-        <div v-if="item.attributes.dividerBefore" class="my-2">
-          <v-divider />
-        </div>
-        <v-list-item link @click="routeToPage(item)">
+    <div v-if="items">
+      <v-list dense class="mt-5">
+        <v-list-item link to="/">
           <v-list-item-content>
-            <h3>
-              {{ item.attributes.title }}
-            </h3>
+            <h3>Home</h3>
           </v-list-item-content>
         </v-list-item>
-        <div v-if="item.attributes.dividerAfter" class="my-2">
-          <v-divider />
+        <div v-for="item in items" :key="item.title">
+          <div v-if="item.dividerBefore" class="my-2">
+            <v-divider />
+          </div>
+          <v-list-item link :to="`${item.path}/`">
+            <v-list-item-content>
+              <h3>
+                <span v-if="item.menuTitle">
+                  {{ item.menuTitle }}
+                </span>
+                <span v-else>
+                  {{ item.title }}
+                </span>
+              </h3>
+            </v-list-item-content>
+          </v-list-item>
+          <div v-if="item.dividerAfter" class="my-2">
+            <v-divider />
+          </div>
         </div>
-      </div>
-    </v-list> -->
+        <v-divider></v-divider>
+        <v-list-item link to="/search/">
+          <v-list-item-content>
+            <h3>Search</h3>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </div>
   </v-navigation-drawer>
 </template>
 
@@ -30,26 +48,17 @@
 import { EventBus } from '@/event-bus'
 // import _ from 'lodash'
 export default {
-  props: {
-    // siteMeta: {
-    //   type: Array,
-    //   default: () => [],
-    // },
-  },
   data: () => ({
     drawer: false,
-    nav: [],
-    tableOfContents: [],
-    sidebarItems: null,
+    items: null,
   }),
-  watch: {},
-  // async created() {
-  //   const items = this.siteMeta.filter((item) => {
-  //     return item.attributes.showInSidebar === true
-  //   })
-  //   const sortedItems = _.orderBy(items, 'attributes.menuRank')
-  //   this.sidebarItems = sortedItems
-  // },
+  async created() {
+    this.items = await this.$content()
+      .where({ showInSidebar: true })
+      .only(['title', 'menuTitle', 'slug', 'path', 'menuRank'])
+      .sortBy('menuRank', 'asc')
+      .fetch()
+  },
   mounted() {
     EventBus.$on('toggleDrawer', () => {
       console.log('open drawer')
@@ -64,7 +73,7 @@ export default {
     routeToPage(item) {
       // console.log(item);
       this.drawer = false
-      this.$router.push(item.path).catch(() => {
+      this.$router.push(`${item.path}/`).catch(() => {
         this.$vuetify.goTo(0)
       })
     },
