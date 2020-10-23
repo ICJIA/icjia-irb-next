@@ -130,9 +130,9 @@ export default {
       )
     },
   },
-  router: {
-    base: '/irb',
-  },
+  // router: {
+  //   base: '/irb',
+  // },
   generate: {
     async routes() {
       // next comment to make VSCode ignore the "error"
