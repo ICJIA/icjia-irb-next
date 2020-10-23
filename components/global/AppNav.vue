@@ -46,7 +46,7 @@
       </v-btn>
     </div>
     <v-btn icon to="/search/" aria-label="Search">
-      <v-icon>mdi-magnify</v-icon>
+      <v-icon aria-label="Search">mdi-magnify</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
