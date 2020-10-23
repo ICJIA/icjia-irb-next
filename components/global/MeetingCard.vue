@@ -19,6 +19,13 @@
       >
         {{ meeting.description }}
       </div>
+      <div
+        v-if="!meeting.show"
+        class="text-right mt-4"
+        @click.native="meeting.show = !meeting.show"
+      >
+        <v-icon medium>mdi-chevron-down</v-icon>
+      </div>
 
       <v-slide-y-transition>
         <div v-show="meeting.show" v-if="meeting.show" class="py-3 mt-2">
@@ -27,10 +34,15 @@
             v-html="render(meeting.markdown)"
           ></div>
 
-          <div class="text-right mt-3">
-            <v-btn x-small @click.prevent="$router.push(meeting.path)"
+          <div class="text-right mt-6">
+            <v-btn
+              x-small
+              color="#0D4474"
+              dark
+              @click.prevent="$router.push(`${meeting.path}/`)"
               >Link <v-icon right>link</v-icon></v-btn
-            >
+            >&nbsp;&nbsp;&nbsp;
+            <v-icon medium>mdi-chevron-up</v-icon>
           </div>
         </div>
       </v-slide-y-transition>

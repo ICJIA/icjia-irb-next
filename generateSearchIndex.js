@@ -21,9 +21,9 @@ const files = glob.readdirSync('./content/**/*.md')
 files.forEach((file) => {
   const f = fs.readFileSync(file, { encoding: 'utf8', flag: 'r' })
   const m = matter(f)
-  const route = file.replace('.md', '').replace('content', '')
+  const route = file.replace('.md', '').replace('content', '') + '/'
   const obj = {}
-  route === '/index' ? (obj.route = '/') : (obj.route = route)
+  route === '/index/' ? (obj.route = '/') : (obj.route = route)
   obj.headings = toc(m.content).json.map((t) => {
     return t.content
   })

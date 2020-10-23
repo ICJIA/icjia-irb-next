@@ -32,11 +32,23 @@ export default {
     ],
     script: [],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-      // {
-      //   rel: 'stylesheet',
-      //   href: 'https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css',
-      // },
+      { rel: 'icon', type: 'image/x-icon', href: '/irb/favicon.ico' },
+
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css',
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css',
+      },
     ],
   },
   /*
@@ -78,24 +90,27 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
+    'nuxt-material-design-icons',
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/dotenv',
-    'nuxt-material-design-icons',
+
     '@nuxtjs/sitemap',
   ],
   sitemap: {
     hostname: 'https://icjia.illinois.gov/',
     gzip: true,
     exclude: [],
+    trailingSlash: true,
     routes: async () => {
       const { $content } = require('@nuxt/content')
       const pages = await $content().only(['path']).fetch()
       const meetings = await $content('meetings').only(['path']).fetch()
       const files = [...pages, ...meetings]
-      return files.map((file) => (file.path === '/index' ? '/' : file.path))
+      return files.map((file) =>
+        file.path === '/index' ? '/' : `${file.path}/`
+      )
     },
   },
   /*
@@ -142,7 +157,7 @@ export default {
       const meetings = await $content('meetings').only(['path']).fetch()
       const files = [...pages, ...meetings]
       const path = files.map((file) =>
-        file.path === '/index' ? '/' : '' + file.path
+        file.path === '/index' ? '/' : `${file.path}/`
       )
       // console.log(path)
       return path

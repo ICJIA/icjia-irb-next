@@ -26,7 +26,7 @@
       <v-btn
         v-for="(item, index) in items"
         :key="`nav-${index}`"
-        :to="item.path === '/index' ? '/' : `${item.path}`"
+        :to="item.path === '/index' ? '/' : `${item.path}/`"
         text
         class="hidden-sm-and-down"
         style="font-weight: 900"
@@ -38,7 +38,7 @@
         <span v-else style="font-size: 14px">{{ item.title }}</span>
       </v-btn>
     </div>
-    <v-btn icon to="/search">
+    <v-btn icon to="/search/">
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
   </v-app-bar>
