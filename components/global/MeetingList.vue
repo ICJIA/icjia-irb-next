@@ -25,7 +25,7 @@ export default {
       isLoading: true,
     }
   },
-  async mounted() {
+  async created() {
     // console.log(now)
     this.meetings = await this.$content('meetings')
       .only(['title', 'description', 'scheduled', 'slug', 'markdown', 'path'])
