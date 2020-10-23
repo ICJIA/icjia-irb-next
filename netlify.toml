@@ -2,8 +2,3 @@
   Command = "npm run generate"
   Functions = "netlify"
   Publish = "dist"
-
-[[headers]]
-for = "/*"
-[headers.values]
-Access-Control-Allow-Origin = "*"
