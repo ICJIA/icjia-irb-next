@@ -87,7 +87,7 @@ export default {
     '@nuxtjs/sitemap',
   ],
   sitemap: {
-    hostname: 'https://irb.icjia.cloud/',
+    hostname: 'https://icjia.illinois.gov/',
     gzip: true,
     exclude: [],
     routes: async () => {
@@ -130,9 +130,9 @@ export default {
       )
     },
   },
-  // router: {
-  //   base: '/irb',
-  // },
+  router: {
+    base: '/irb',
+  },
   generate: {
     async routes() {
       // next comment to make VSCode ignore the "error"
