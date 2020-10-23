@@ -2,6 +2,7 @@
   <div style="margin-top: 90px">
     <v-container
       ><v-col cols="12">
+        <h1>Search IRB</h1>
         <v-form class="pl-2">
           <v-text-field
             ref="textfield"

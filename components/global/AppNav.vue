@@ -18,7 +18,14 @@
     />&nbsp;&nbsp;&nbsp;&nbsp;
 
     <v-toolbar-title class="heavy hover" @click="gotoHome">
-      <span style="" class="agency hover">INSTITUTIONAL REVIEW BOARD</span>
+      <span
+        v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm"
+        class="agency hover"
+        >IRB</span
+      >
+      <span v-else style="" class="agency hover"
+        >INSTITUTIONAL REVIEW BOARD</span
+      >
     </v-toolbar-title>
 
     <v-spacer />

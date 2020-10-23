@@ -1,10 +1,9 @@
 <template>
-  <div style="margin-top: 90px">
+  <div>
     <client-only>
-      <v-container v-if="!isLoading">
+      <v-container v-if="!isLoading" fluid>
         <v-row>
           <v-col cols="12" class="markdown-body">
-            <h1>Meetings</h1>
             <div v-for="(meeting, index) in meetings" :key="index">
               <MeetingCard :meeting="meeting"></MeetingCard>
             </div>
@@ -20,7 +19,13 @@
 
 <script>
 export default {
-  async fetch() {
+  data() {
+    return {
+      meetings: () => [],
+      isLoading: true,
+    }
+  },
+  async created() {
     // console.log(now)
     this.meetings = await this.$content('meetings')
       .only(['title', 'description', 'scheduled', 'slug', 'markdown', 'path'])
@@ -31,12 +36,6 @@ export default {
       show: false,
     }))
     this.isLoading = false
-  },
-  data() {
-    return {
-      meetings: () => [],
-      isLoading: true,
-    }
   },
 }
 </script>

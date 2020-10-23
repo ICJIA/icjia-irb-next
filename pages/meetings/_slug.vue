@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <v-container style="margin-top: 90px">
+    <v-container v-if="doc" style="margin-top: 90px">
       <v-row>
         <v-col
           cols="12"
@@ -27,6 +27,9 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-container v-else>
+      <Loader></Loader>
+    </v-container>
   </client-only>
 </template>
 
@@ -36,6 +39,7 @@ export default {
     const doc = await $content(`meetings/${params.slug}`).fetch()
     return { doc }
   },
+  data() {},
   methods: {
     getMeta() {
       const metaObj = {}

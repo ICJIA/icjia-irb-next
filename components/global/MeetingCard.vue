@@ -22,7 +22,7 @@
       <div
         v-if="!meeting.show"
         class="text-right mt-4"
-        @click.native="meeting.show = !meeting.show"
+        @click.stop.prevent="meeting.show = !meeting.show"
       >
         <v-icon medium>mdi-chevron-down</v-icon>
       </div>
