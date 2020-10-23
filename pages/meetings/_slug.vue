@@ -20,14 +20,25 @@ export default {
     const doc = await $content(`meetings/${params.slug}`).fetch()
     return { doc }
   },
+  methods: {
+    getMeta() {
+      const metaObj = {}
+      if (!this.isLoading) {
+        metaObj.title = this.doc.title
+        metaObj.description =
+          this.doc.description || "ICJIA's Institutional Review Board"
+      }
+      return metaObj
+    },
+  },
   head() {
     return {
-      title: 'title',
+      title: this.getMeta().title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'description',
+          content: this.getMeta().description,
         },
       ],
     }

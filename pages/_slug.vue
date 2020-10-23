@@ -35,20 +35,24 @@ export default {
     }
   },
   methods: {
-    getTitle() {
+    getMeta() {
+      const metaObj = {}
       if (!this.isLoading) {
-        return this.doc.title
+        metaObj.title = this.doc.title
+        metaObj.description =
+          this.doc.description || "ICJIA's Institutional Review Board"
       }
+      return metaObj
     },
   },
   head() {
     return {
-      title: this.getTitle(this.doc),
+      title: this.getMeta().title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'description',
+          content: this.getMeta().description,
         },
       ],
     }

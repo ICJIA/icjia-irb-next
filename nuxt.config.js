@@ -92,7 +92,6 @@ export default {
   modules: [
     'nuxt-material-design-icons',
     '@nuxtjs/axios',
-    // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/dotenv',
 
