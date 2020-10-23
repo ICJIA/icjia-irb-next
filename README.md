@@ -26,11 +26,13 @@ $ npm run generate
 If redirecting with Nginx, using Nuxt router's ```base``` property, and deploying to Netlify, configure Nginx to add trailing slash to all URLs:
 
 ```
+...
 location /irb/ {
         # force trailing slash for Nuxt
         rewrite ^([^.\?]*[^/])$ $1/ permanent;
         proxy_pass https://icjia-irb.netlify.app/;
     }
+...
 ```
 
 ## CHANGLOG
