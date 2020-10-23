@@ -18,7 +18,6 @@
       "
     >
       <div
-        v-if="heading.length"
         ref="anchor"
         style="margin-left: -3px; font-weight: bold; font-size: 14px"
         class="mb-4 hover anchor visible"
@@ -26,9 +25,6 @@
       >
         {{ `${'Navigation'.toUpperCase()}` }}
       </div>
-    </div>
-    <div v-else>
-      <div ref="anchor" class="mt-5"></div>
     </div>
 
     <div class="divider pl-5">

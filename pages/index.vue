@@ -3,14 +3,36 @@
     <client-only>
       <v-container v-if="!isLoading">
         <v-row>
-          <v-col cols="12" md="9" class="markdown-body">
+          <v-col
+            cols="12"
+            sm="12"
+            :md="dynamicFlex()"
+            order-md="1"
+            order="2"
+            order-sm="2"
+            class="markdown-body"
+          >
             <h1>{{ doc.title }}</h1>
             <nuxt-content :document="doc" />
           </v-col>
-          <v-col cols="12" md="3">
+          <v-col
+            v-if="doc.showToc"
+            cols="12"
+            sm="12"
+            md="3"
+            order-md="2"
+            order="1"
+            order-sm="1"
+          >
             <toc :toc="doc.toc"></toc>
           </v-col>
-          <v-col cols="12" md="9">
+          <v-col
+            cols="12"
+            :md="dynamicFlex()"
+            order-md="3"
+            order="3"
+            order-sm="3"
+          >
             <div v-if="meetings && meetings.length">
               <div
                 v-for="(meeting, index) in meetings"
@@ -71,6 +93,15 @@ export default {
   },
   created() {},
   mounted() {},
+  methods: {
+    dynamicFlex() {
+      if (this.$vuetify.breakpoint.xs || this.$vuetify.breakpoint.sm) {
+        return '12'
+      } else {
+        return this.doc.showToc ? '9' : '12'
+      }
+    },
+  },
 
   head() {
     return {
