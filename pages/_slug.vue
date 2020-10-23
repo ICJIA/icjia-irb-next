@@ -13,7 +13,11 @@
             class="markdown-body"
           >
             <h1>{{ doc.title }}</h1>
-            <nuxt-content :document="doc" />
+            <nuxt-content
+              :document="doc"
+              class="dynamic-content"
+              @click.native="handleClicks"
+            />
           </v-col>
           <v-col
             v-if="doc.showToc"
@@ -38,17 +42,20 @@
 </template>
 
 <script>
+import { handleClicks } from '@/mixins/handleClicks'
 export default {
-  async fetch() {
-    this.doc = await this.$content(this.$route.params.slug).fetch()
-    this.isLoading = false
-  },
+  mixins: [handleClicks],
 
   data() {
     return {
       isLoading: true,
       doc: null,
     }
+  },
+  async created() {
+    this.doc = await this.$content(this.$route.params.slug).fetch()
+
+    this.isLoading = false
   },
   methods: {
     getMeta() {
