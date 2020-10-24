@@ -15,9 +15,9 @@ To gain an understanding of ICJIA's internal review procedures, please watch thi
 
 ## IRB Handbook
 
-Below is a link to ICJIA's official IRB policies and procedures, laid out in the IRB Handbook. This Handbook defines important terms and defines the roles of relevant IRB entities. IRB forms and helpful resources can be found in the [Training](LINKTOTRAININGTAB) section of this site.
+Below is a link to ICJIA's official IRB policies and procedures, laid out in the IRB Handbook. This Handbook defines important terms and defines the roles of relevant IRB entities. IRB forms and helpful resources can be found in the [Training](/training) section of this site.
 
-[ICJIA IRB Handbook (Updated XX/XX/2020)](IRBhandbook2020.pdf).
+[ICJIA IRB Handbook(<last-updated updated="2020-05-07" text="Updated "></last-updated>)](IRBhandbook2020.pdf)
 
 ## Human Subject Research Training
 

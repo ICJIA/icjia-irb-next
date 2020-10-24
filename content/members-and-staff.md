@@ -15,7 +15,7 @@ Below is a description of ICJIA's IRB members and staff.
 
 ## IRB Member List
 
-<div class="mt-10 mb-1 text-right" style="font-size: 12px; font-weight: 400; color: #444">
+<div class="mt-10 mb-1 text-left" style="font-size: 12px; font-weight: 400; color: #444">
 <last-updated updated="2020-10-07"></last-updated>
 </div>
 

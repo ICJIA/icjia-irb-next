@@ -1,5 +1,5 @@
 <template>
-  <div>Last updated: {{ formatDate(updated) }}</div>
+  <span>{{ text }} {{ formatDate(updated) }}</span>
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
     updated: {
       type: String,
       default: () => new Date().toJSON().split('T')[0],
+    },
+    text: {
+      type: String,
+      default: 'Last updated: ',
     },
   },
   methods: {
