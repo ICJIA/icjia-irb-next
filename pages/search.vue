@@ -148,6 +148,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.$refs.textfield.focus()
+      this.query = ''
     })
   },
   methods: {
@@ -184,6 +185,5 @@ export default {
   background: #ffff00;
   font-weight: 900;
   padding: 0px;
-  text-transform: uppercase;
 }
 </style>
