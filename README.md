@@ -21,9 +21,9 @@ $ npm run dev
 $ npm run generate
 ```
 
-## Nginx Configuration
+## Trailing slash issues
 
-If redirecting with Nginx, using Nuxt router's ```base``` property, and deploying to Netlify, configure Nginx to add trailing slash to all URLs:
+If using Nginx, Nuxt router's ```base``` property, and Netlify, please configure Nginx to add a trailing slash to all URLs:
 
 ```
 ...
