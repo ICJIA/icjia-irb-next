@@ -38,7 +38,7 @@
                 v-for="(meeting, index) in meetings"
                 :key="index"
                 style="margin-top: -20px"
-                class="mb-10"
+                class="mb-10 test"
               >
                 <MeetingCard :meeting="meeting"></MeetingCard>
               </div>
@@ -110,3 +110,5 @@ export default {
   },
 }
 </script>
+
+<style></style>

@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-card
-      elevation="1"
-      color="grey lighten-5"
+      elevation="0"
+      color="grey lighten-4"
       class="mt-6 px-5 pt-3 pb-8 meetingCard"
       @click.native="meeting.show = !meeting.show"
     >

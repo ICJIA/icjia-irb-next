@@ -99,29 +99,5 @@
     "description": "Traning information for ICJIA's IRB.",
     "type": "content",
     "searchMeta": ""
-  },
-  {
-    "route": "/irb/favicon.ico",
-    "headings": [],
-    "title": "favicon.ico",
-    "description": "/irb/favicon.ico",
-    "type": "file",
-    "searchMeta": ""
-  },
-  {
-    "route": "/irb/icjia-logo-min.png",
-    "headings": [],
-    "title": "icjia-logo-min.png",
-    "description": "/irb/icjia-logo-min.png",
-    "type": "file",
-    "searchMeta": ""
-  },
-  {
-    "route": "/irb/icjia-logo.png",
-    "headings": [],
-    "title": "icjia-logo.png",
-    "description": "/irb/icjia-logo.png",
-    "type": "file",
-    "searchMeta": ""
   }
 ]

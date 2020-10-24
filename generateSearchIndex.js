@@ -17,6 +17,7 @@ const blacklist = [
   '404.html',
   'api.json',
   'search.json',
+  'favicon.ico',
 ]
 
 const content = []

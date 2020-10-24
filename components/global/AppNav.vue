@@ -8,8 +8,8 @@
     />
     <div style="width: 15px" />
     <v-img
-      :src="require('@/static/icjia-logo.png')"
-      :lazy-src="require('@/static/icjia-logo-min.png')"
+      :src="require('@/assets/icjia-logo.png')"
+      :lazy-src="require('@/assets/icjia-logo-min.png')"
       alt="Illinois Criminal Justice Information Authority"
       max-width="90"
       style="margin-left: -5px; margin-right: 8px"
