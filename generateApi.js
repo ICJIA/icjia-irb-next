@@ -26,6 +26,8 @@ const blacklist = [
   'placeholder.md',
 ]
 
+const siteSections = ['meetings']
+
 md.use(namedHeaders)
 md.use(attrs)
 
