@@ -21,9 +21,9 @@
               class="my-5"
             >
               <v-card
-                elevation="1"
-                class="px-5 py-4 info-card"
-                color="grey lighten-5"
+                elevation="0"
+                class="px-5 py-2 info-card"
+                color="grey lighten-4"
                 @click="route(result.route)"
               >
                 <div v-if="result.title">

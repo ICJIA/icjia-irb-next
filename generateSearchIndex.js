@@ -15,6 +15,8 @@ const blacklist = [
   '_headers',
   'robots.txt',
   '404.html',
+  'api.json',
+  'search.json',
 ]
 
 const content = []
