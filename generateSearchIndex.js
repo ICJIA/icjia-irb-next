@@ -36,6 +36,7 @@ markdown.forEach((file) => {
   obj.title = m.data.title
   obj.description = m.data.description
   obj.type = 'content'
+  obj.file = false
   obj.searchMeta = m.data.searchMeta || ''
   content.push(obj)
 })
@@ -43,10 +44,11 @@ markdown.forEach((file) => {
 const files = []
 utils.walkSync('./static', function (filePath, stat) {
   const obj = {
-    route: filePath.replace('static', '/irb'),
+    route: filePath.replace('static', ''),
     headings: [],
+    file: true,
     title: path.basename(filePath),
-    description: filePath.replace('static', '/irb'),
+    description: filePath.replace('static', ''),
     type: 'file',
     searchMeta: '',
   }

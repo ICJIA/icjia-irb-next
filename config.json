@@ -13,7 +13,7 @@
     "shouldSort": true,
     "includeMatches": true,
     "findAllMatches": true,
-    "minMatchCharLength": 3,
+    "minMatchCharLength": 2,
     "location": 0,
     "threshold": 0.6,
     "distance": 100,
@@ -34,12 +34,12 @@
         "weight": 1
       },
       {
-        "name": "type",
-        "weight": 2
+        "name": "searchMeta",
+        "weight": 1
       },
       {
-        "name": "searchMeta",
-        "weight": 2
+        "name": "type",
+        "weight": 1
       }
     ]
   }

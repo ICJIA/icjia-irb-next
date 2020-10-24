@@ -14,24 +14,55 @@
           <div style="font-size: 12px" class="text-right mb-9">
             {{ queryResults.length }} result{{ resultNumber }}
           </div>
+
           <div v-if="query && query.length">
             <div
               v-for="(result, index) in queryResults"
               :key="index"
-              class="my-5"
+              class="my-8"
             >
               <v-card
-                elevation="0"
-                class="px-5 py-2 info-card"
-                color="grey lighten-4"
-                @click="route(result.route)"
+                elevation="1"
+                class="px-5 py-6 info-card"
+                color="grey lighten-5"
+                @click="route(result)"
               >
+                <v-btn
+                  v-if="result.file"
+                  color="#0d4474"
+                  fab
+                  small
+                  absolute
+                  top
+                  left
+                  dark
+                  @click="route(result)"
+                >
+                  <v-icon>mdi-cloud-download</v-icon>
+                </v-btn>
+
+                <div
+                  v-if="result.file"
+                  class="text-right"
+                  style="
+                    font-weight: bold;
+                    font-size: 12px;
+                    margin-top: 5px;
+                    color: #0d4474;
+                    text-transform: uppercase;
+                  "
+                >
+                  <div style="display: inline" v-html="result.type"></div>
+                </div>
+
                 <div v-if="result.title">
                   <h2 v-html="result.title"></h2>
                 </div>
-                <v-card-text v-if="result.description"
+                <v-card-text
+                  v-if="result.description && result.type === 'content'"
                   ><div v-html="result.description"></div
                 ></v-card-text>
+
                 <v-card-text
                   v-if="result.headings"
                   style="margin-top: -15px; margin-left: 15px"
@@ -120,9 +151,14 @@ export default {
     })
   },
   methods: {
-    route(path) {
-      console.log(path)
-      this.$router.push(path)
+    route(item) {
+      if (item.type === 'content') {
+        this.$router.push(item.route)
+      } else {
+        console.log('file download: ', item.route)
+        window.open(`/irb${item.route}`)
+        // TODO: Add download event here for Google
+      }
     },
     instantSearch() {
       this.queryResults = highlight(this.fuse.search(this.query))
@@ -134,6 +170,11 @@ export default {
       }
       return null
     },
+  },
+  head() {
+    return {
+      title: 'Search',
+    }
   },
 }
 </script>
