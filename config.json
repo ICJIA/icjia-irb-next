@@ -32,6 +32,14 @@
       {
         "name": "headings",
         "weight": 1
+      },
+      {
+        "name": "type",
+        "weight": 2
+      },
+      {
+        "name": "searchMeta",
+        "weight": 2
       }
     ]
   }
