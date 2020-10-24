@@ -34,16 +34,16 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/irb/favicon.ico' },
 
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css',
-      },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
+      // },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css',
+      // },
       {
         rel: 'stylesheet',
         href:
