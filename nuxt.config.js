@@ -1,4 +1,19 @@
 import webpack from 'webpack'
+import utils from './lib/utils'
+const blacklist = [
+  '.DS_Store',
+  'placeholder.png',
+  'placeholder.json',
+  'placeholder.md',
+  '_headers',
+  'robots.txt',
+  '404.html',
+  'api.json',
+  'search.json',
+  'favicon.ico',
+]
+
+// console.log(utils.blacklist)
 
 // function addBase(url) {
 //   const base = process.env.NODE_ENV === 'production' ? '/irb/' : '/'
@@ -101,14 +116,40 @@ export default {
     hostname: 'https://icjia.illinois.gov/',
     gzip: true,
     exclude: [],
-    trailingSlash: true,
     routes: async () => {
+      const files = []
       const { $content } = require('@nuxt/content')
       const pages = await $content().only(['path']).fetch()
       const meetings = await $content('meetings').only(['path']).fetch()
-      const files = [...pages, ...meetings]
-      return files.map((file) =>
-        file.path === '/index' ? '/' : `${file.path}/`
+
+      // ... add files to sitemap.xml
+      utils.walkSync('./static', function (filePath, stat) {
+        // const route = filePath.replace('static/', '')
+        // ... push to array if filename not in blacklist ...
+        // if (!blacklist.includes(route)) files.push(route)
+        const obj = {}
+        obj.path = filePath.replace('static/', '')
+
+        // files.push(obj)
+        if (!blacklist.includes(obj.path)) files.push(obj)
+      })
+
+      const content = [...pages, ...meetings, ...files]
+      // console.log('sitemap array: ', content)
+      // const dotIndex = str.lastIndexOf('.')
+      // const slashedContent = content.map((item) => {
+      //   if (item.path.lastIndexOf('.') < 0) {
+      //     return item
+      //   } else {
+      //     item.path = item.path + '/'
+      //     return item
+      //   }
+      //   return item
+      //   // console.log('path: ', item.path.lastIndexOf('.'))
+      //   // return item
+      // })
+      return content.map((item) =>
+        item.path === '/index' ? '/' : `${item.path}`
       )
     },
   },
@@ -126,6 +167,7 @@ export default {
   },
   hooks: {
     'content:file:beforeInsert': (document) => {
+      // ... add full markdown to returned $content object
       if (document.extension === '.md') {
         document.markdown = document.text
       }
@@ -155,11 +197,10 @@ export default {
       const pages = await $content().only(['path']).fetch()
       const meetings = await $content('meetings').only(['path']).fetch()
       const files = [...pages, ...meetings]
-      const path = files.map((file) =>
+      const paths = files.map((file) =>
         file.path === '/index' ? '/' : `${file.path}/`
       )
-      // console.log(path)
-      return path
+      return paths
     },
   },
 }
