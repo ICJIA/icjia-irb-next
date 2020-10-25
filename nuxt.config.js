@@ -110,15 +110,15 @@ export default {
       const pages = await $content().only(['path']).fetch()
       const meetings = await $content('meetings').only(['path']).fetch()
 
-      const slashedPages = pages.map((p) => {
-        p.path = `${p.path}/`
-        return p
-      })
+      // const slashedPages = pages.map((p) => {
+      //   p.path = `${p.path}/`
+      //   return p
+      // })
 
-      const slashedMeetings = meetings.map((p) => {
-        p.path = `${p.path}/`
-        return p
-      })
+      // const slashedMeetings = meetings.map((p) => {
+      //   p.path = `${p.path}/`
+      //   return p
+      // })
 
       // ... add files to sitemap.xml
       utils.walkSync('./static', function (filePath, stat) {
@@ -127,7 +127,7 @@ export default {
         if (!utils.blacklist.includes(obj.path)) files.push(obj)
       })
 
-      const content = [...slashedPages, ...slashedMeetings, ...files]
+      const content = [...pages, ...meetings, ...files]
 
       return content.map((item) =>
         item.path === '/index' ? '/' : `${item.path}`

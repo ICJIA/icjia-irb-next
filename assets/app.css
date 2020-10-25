@@ -6,3 +6,11 @@ h2 {
   margin-bottom: 10px;
   margin-top: 15px;
 } */
+
+.markdown-body .download {
+  font-weight: 900;
+}
+
+.markdown-body .disclaimer {
+  font-size: 12px;
+}
