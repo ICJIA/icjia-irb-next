@@ -1,17 +1,5 @@
 import webpack from 'webpack'
 import utils from './lib/utils'
-const blacklist = [
-  '.DS_Store',
-  'placeholder.png',
-  'placeholder.json',
-  'placeholder.md',
-  '_headers',
-  'robots.txt',
-  '404.html',
-  'api.json',
-  'search.json',
-  'favicon.ico',
-]
 
 // console.log(utils.blacklist)
 
@@ -122,32 +110,25 @@ export default {
       const pages = await $content().only(['path']).fetch()
       const meetings = await $content('meetings').only(['path']).fetch()
 
-      // ... add files to sitemap.xml
-      utils.walkSync('./static', function (filePath, stat) {
-        // const route = filePath.replace('static/', '')
-        // ... push to array if filename not in blacklist ...
-        // if (!blacklist.includes(route)) files.push(route)
-        const obj = {}
-        obj.path = filePath.replace('static/', '')
-
-        // files.push(obj)
-        if (!blacklist.includes(obj.path)) files.push(obj)
+      const slashedPages = pages.map((p) => {
+        p.path = `${p.path}/`
+        return p
       })
 
-      const content = [...pages, ...meetings, ...files]
-      // console.log('sitemap array: ', content)
-      // const dotIndex = str.lastIndexOf('.')
-      // const slashedContent = content.map((item) => {
-      //   if (item.path.lastIndexOf('.') < 0) {
-      //     return item
-      //   } else {
-      //     item.path = item.path + '/'
-      //     return item
-      //   }
-      //   return item
-      //   // console.log('path: ', item.path.lastIndexOf('.'))
-      //   // return item
-      // })
+      const slashedMeetings = meetings.map((p) => {
+        p.path = `${p.path}/`
+        return p
+      })
+
+      // ... add files to sitemap.xml
+      utils.walkSync('./static', function (filePath, stat) {
+        const obj = {}
+        obj.path = filePath.replace('static/', '')
+        if (!utils.blacklist.includes(obj.path)) files.push(obj)
+      })
+
+      const content = [...slashedPages, ...slashedMeetings, ...files]
+
       return content.map((item) =>
         item.path === '/index' ? '/' : `${item.path}`
       )
