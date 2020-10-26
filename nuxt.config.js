@@ -102,37 +102,40 @@ export default {
   ],
   sitemap: {
     hostname: 'https://icjia.illinois.gov/',
-    gzip: true,
+    gzip: false,
     exclude: [],
-    routes: async () => {
-      const files = []
-      const { $content } = require('@nuxt/content')
-      const pages = await $content().only(['path']).fetch()
-      const meetings = await $content('meetings').only(['path']).fetch()
+    sitemaps: [
+      {
+        path: '/sitemap-content.xml',
+        gzip: false,
+        trailingSlash: true,
+        routes: async () => {
+          const { $content } = require('@nuxt/content')
+          const pages = await $content().only(['path']).fetch()
+          const meetings = await $content('meetings').only(['path']).fetch()
+          const content = [...pages, ...meetings]
+          return content.map((item) =>
+            item.path === '/index' ? '/' : `${item.path}`
+          )
+        },
+      },
+      {
+        path: '/sitemap-files.xml',
+        gzip: false,
+        trailingSlash: false,
+        exclude: ['/', '/search'],
+        routes: () => {
+          const files = []
+          utils.walkSync('./static', function (filePath, stat) {
+            const obj = {}
+            obj.path = filePath.replace('static/', '')
+            if (!utils.blacklist.includes(obj.path)) files.push(obj)
+          })
 
-      // const slashedPages = pages.map((p) => {
-      //   p.path = `${p.path}/`
-      //   return p
-      // })
-
-      // const slashedMeetings = meetings.map((p) => {
-      //   p.path = `${p.path}/`
-      //   return p
-      // })
-
-      // ... add files to sitemap.xml
-      utils.walkSync('./static', function (filePath, stat) {
-        const obj = {}
-        obj.path = filePath.replace('static/', '')
-        if (!utils.blacklist.includes(obj.path)) files.push(obj)
-      })
-
-      const content = [...pages, ...meetings, ...files]
-
-      return content.map((item) =>
-        item.path === '/index' ? '/' : `${item.path}`
-      )
-    },
+          return files.map((item) => item.path)
+        },
+      },
+    ],
   },
   /*
    ** Axios module configuration
