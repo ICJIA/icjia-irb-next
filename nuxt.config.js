@@ -64,7 +64,6 @@ export default {
    */
   components: true,
 
-  /* Google Analytics ID: UA-150082887-9 */
   /*
    ** Nuxt.js dev-modules
    */
@@ -133,7 +132,6 @@ export default {
             obj.path = filePath.replace('static/', '')
             if (!utils.blacklist.includes(obj.path)) files.push(obj)
           })
-
           return files.map((item) => item.path)
         },
       },
