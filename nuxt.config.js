@@ -1,14 +1,6 @@
 import webpack from 'webpack'
 import utils from './lib/utils'
 
-// console.log(utils.blacklist)
-
-// function addBase(url) {
-//   const base = process.env.NODE_ENV === 'production' ? '/irb/' : '/'
-//   // console.log(base + url)
-//   return base + url
-// }
-
 export default {
   /*
    ** Nuxt target
@@ -33,7 +25,10 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    script: [],
+
+    script: [
+      // { src: 'https://www.googletagmanager.com/gtag/js?id=G-4DLM9P8M72' },
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/irb/favicon.ico' },
 
@@ -82,10 +77,11 @@ export default {
         /* module options */
       },
     ],
+
     // [
-    //   '@nuxtjs/google-analytics',
+    //   '@nuxtjs/google-gtag',
     //   {
-    //     id: 'UA-150082887-9',
+    //     id: 'G-4DLM9P8M72',
     //   },
     // ],
   ],
@@ -97,9 +93,15 @@ export default {
     '@nuxtjs/axios',
     '@nuxt/content',
     '@nuxtjs/dotenv',
-
     '@nuxtjs/sitemap',
+    [
+      '@nuxtjs/google-gtag',
+      {
+        id: 'G-4DLM9P8M72',
+      },
+    ],
   ],
+
   sitemap: {
     hostname: 'https://icjia.illinois.gov/',
     gzip: false,
