@@ -7,19 +7,6 @@ const toc = require('markdown-toc')
 const globMd = require('glob-fs')({ gitignore: true })
 const utils = require('./lib/utils')
 
-const blacklist = [
-  '.DS_Store',
-  'placeholder.png',
-  'placeholder.json',
-  'placeholder.md',
-  '_headers',
-  'robots.txt',
-  '404.html',
-  'api.json',
-  'search.json',
-  'favicon.ico',
-]
-
 const content = []
 
 const markdown = globMd.readdirSync('./content/**/*.md')
@@ -53,7 +40,7 @@ utils.walkSync('./static', function (filePath, stat) {
     searchMeta: '',
   }
   // ... push to array if filename not in blacklist ...
-  if (!blacklist.includes(obj.title)) files.push(obj)
+  if (!utils.blacklist.includes(obj.title)) files.push(obj)
 })
 
 const searchIndex = [...content, ...files]
