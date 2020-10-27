@@ -46,7 +46,7 @@
             <div v-else>
               <div
                 style="font-weight: bold; font-size: 20px; color: #555"
-                class="text-center mt-10"
+                class="text-center mt-5 mb-12"
               >
                 No upcoming meetings scheduled.
               </div>
