@@ -10,20 +10,14 @@
       shaded: $vuetify.breakpoint.xs || $vuetify.breakpoint.xs,
     }"
   >
-    <div
-      v-if="
-        $vuetify.breakpoint.md ||
-        $vuetify.breakpoint.lg ||
-        $vuetify.breakpoint.xl
-      "
-    >
+    <div>
       <div
         ref="anchor"
         style="margin-left: -3px; font-weight: bold; font-size: 14px"
-        class="mb-4 hover anchor visible"
+        class="mb-2 hover anchor visible"
         @click="$vuetify.goTo(0)"
       >
-        {{ `${'Navigation'.toUpperCase()}` }}
+        {{ `${'ON THIS PAGE'.toUpperCase()}` }}
       </div>
     </div>
 
@@ -38,23 +32,6 @@
         >
           {{ `${item.text}` }}
         </div>
-        <!-- <div
-          v-if="
-            item.lvl === 3 &&
-            ($vuetify.breakpoint.lg ||
-              $vuetify.breakpoint.md ||
-              $vuetify.breakpoint.xl)
-          "
-          :id="`${item.id}`"
-          class="ml-3 my-2 tocItem hover animated fadeIn"
-          style="font-size: 13px"
-          :class="{
-            hidden: item.parent != currentHeading,
-          }"
-          @click="scrollTo(`${item.target}`)"
-        >
-          {{ item.content }}
-        </div> -->
       </div>
     </div>
   </div>

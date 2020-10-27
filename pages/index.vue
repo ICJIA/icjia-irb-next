@@ -16,7 +16,11 @@
             <nuxt-content :document="doc" />
           </v-col>
           <v-col
-            v-if="doc.showToc"
+            v-if="
+              (doc.showToc && $vuetify.breakpoint.md) ||
+              $vuetify.breakpoint.lg ||
+              $vuetify.breakpoint.xl
+            "
             cols="12"
             sm="12"
             md="3"
