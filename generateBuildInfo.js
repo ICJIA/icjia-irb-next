@@ -34,7 +34,7 @@ utils.walkSync('./dist', function (filePath, stat) {
 })
 
 indexFiles.forEach((f) => {
-  console.log('file: ', f)
+  console.log('build banner inserted: ', f)
   fs.appendFile(f, `${banner}`, function (err) {
     if (err) throw err
   })
