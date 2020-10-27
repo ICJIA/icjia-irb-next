@@ -2,6 +2,7 @@ const fs = require('fs')
 const moment = require('moment')
 // eslint-disable-next-line no-unused-vars
 const tz = require('moment-timezone')
+const utils = require('./lib/utils')
 const pkg = require('./package.json')
 const tstamp = moment()
 const chicagoTime = tstamp
@@ -25,10 +26,16 @@ license:        ${pkg.license}
 
 -->`
 
-fs.appendFile('./dist/index.html', `${banner}`, function (err) {
-  if (err) throw err
-  console.log('Build banner inserted:')
-  console.log(banner)
+const indexFiles = []
+utils.walkSync('./dist', function (filePath, stat) {
+  if (filePath.includes('index.html')) {
+    indexFiles.push(filePath)
+  }
 })
 
-// console.log(banner);
+indexFiles.forEach((f) => {
+  console.log('file: ', f)
+  fs.appendFile(f, `${banner}`, function (err) {
+    if (err) throw err
+  })
+})
