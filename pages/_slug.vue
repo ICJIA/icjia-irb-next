@@ -10,14 +10,11 @@
             order-md="1"
             order="2"
             order-sm="2"
-            class="markdown-body"
+            class="markdown-body dynamic-content"
+            @click="handleClicks"
           >
             <h1>{{ doc.title }}</h1>
-            <nuxt-content
-              :document="doc"
-              class="dynamic-content"
-              @click.native="handleClicks"
-            />
+            <nuxt-content :document="doc" class="" />
           </v-col>
           <v-col
             v-if="doc.showToc"
