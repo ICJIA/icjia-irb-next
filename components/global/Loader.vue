@@ -4,8 +4,13 @@
       indeterminate
       color="primary"
       :size="size"
+      :width="width"
     ></v-progress-circular>
-    <div class="mt-12" style="font-size: 12px; font-weight: bold">
+    <div
+      v-if="!hideText"
+      class="mt-12"
+      style="font-size: 12px; font-weight: bold"
+    >
       LOADING ...
     </div>
   </div>
@@ -15,12 +20,20 @@
 export default {
   props: {
     size: {
-      type: String,
-      default: '100',
+      type: Number,
+      default: 100,
     },
     height: {
       type: String,
       default: '500',
+    },
+    hideText: {
+      type: Boolean,
+      default: false,
+    },
+    width: {
+      type: Number,
+      default: 4,
     },
   },
   mounted() {},

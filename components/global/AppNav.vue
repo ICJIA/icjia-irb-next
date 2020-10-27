@@ -45,6 +45,15 @@
         <span v-else style="font-size: 14px">{{ item.title }}</span>
       </v-btn>
     </div>
+    <div v-else>
+      <Loader
+        :size="20"
+        :hide-text="true"
+        height="0"
+        :width="2"
+        class="mr-12"
+      ></Loader>
+    </div>
     <v-btn icon to="/search/" aria-label="Search">
       <v-icon aria-label="Search">mdi-magnify</v-icon>
     </v-btn>
