@@ -11,17 +11,15 @@ createdAt: '2020-10-21'
 menuRank: 300
 ---
 
-To gain an understanding of ICJIA's internal review procedures, please watch this [video](LINKTOVIDEO) and review the IRB application process [here](ApplicationProcess.pdf).
-
-## IRB Handbook
-
-Below is a link to ICJIA's official IRB policies and procedures, laid out in the IRB Handbook. This Handbook defines important terms and defines the roles of relevant IRB entities.
-
-[ICJIA IRB Handbook (<last-updated updated="2020-05-07" text="Updated "></last-updated>)](IRBhandbook2020.pdf)
-
 ## Human Subject Research Training
 
-ICJIA researchers (staff and interns) and IRB members are required to receive a Human Subjects Research certification before they can participate in or review research. ICJIA recommends completing this training through your university if possible. If you do not have access to a university's training, you can complete ICJIA's training. To complete this training, [click here](HSRTrainingCourse.pdf).
+ICJIA researchers (staff and interns) and IRB members are required to receive a Human Subjects Research certification before they can participate in or review research. ICJIA recommends completing this training through your university if possible.
+
+If you do not have access to a university's training, you can complete ICJIA's training. To complete this training, [click here](HSRTrainingCourse.pdf).
+
+## Review Process
+
+To gain an understanding of ICJIA's internal review procedures, please watch this [video](https://www.youtube.com/watch?v=fDon2ksEpp8&t=56s) and review the IRB application process [here](ApplicationProcess.pdf).
 
 ## Forms and Templates
 
