@@ -23,7 +23,7 @@ $ npm run generate
 
 ## Trailing slash
 
-If using Nginx, Nuxt router's `base` property, and Netlify, please configure Nginx to add a trailing slash to all non-file, content URLs:
+If using Nginx, Nuxt router's `base` property, and Netlify, please configure Nginx to add a trailing slash to all non-file URLs:
 
 ```
 ...
