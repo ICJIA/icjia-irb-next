@@ -62,12 +62,12 @@ export default {
   },
   head() {
     return {
-      title: this.getMeta().title,
+      title: this.doc.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.getMeta().description,
+          content: this.doc.description || "ICJIA's Institutional Review Board",
         },
       ],
     }
