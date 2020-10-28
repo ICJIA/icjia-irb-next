@@ -1,7 +1,7 @@
 <template>
   <div style="margin-top: 90px">
     <client-only>
-      <v-container v-if="!isLoading">
+      <v-container v-if="doc">
         <v-row>
           <v-col
             cols="12"
@@ -37,7 +37,7 @@
             order="3"
             order-sm="3"
           >
-            <div v-if="meetings && meetings.length">
+            <div v-if="meetings">
               <div
                 v-for="(meeting, index) in meetings"
                 :key="index"
@@ -77,20 +77,19 @@
 // import { EventBus } from '@/event-bus'
 // import { handleClicks } from '@/mixins/handleClicks'
 export default {
-  // mixins: [handleClicks],
-  async fetch() {
+  async asyncData({ $content, params }) {
     const now = new Date().toJSON().split('T')[0]
-    this.doc = await this.$content('index').fetch()
-    this.meetings = await this.$content('meetings')
+    const doc = await $content('index').fetch()
+    const meetings = await $content('meetings')
       .only(['title', 'description', 'scheduled', 'slug', 'markdown', 'path'])
       .where({ scheduled: { $gt: now } })
       .sortBy('scheduled', 'desc')
       .fetch()
-    this.meetings = this.meetings.map((meeting) => ({
+    const meetingsFinal = meetings.map((meeting) => ({
       ...meeting,
       show: false,
     }))
-    this.isLoading = false
+    return { doc, meetingsFinal }
   },
   data() {
     return {

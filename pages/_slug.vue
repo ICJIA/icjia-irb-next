@@ -40,18 +40,16 @@
 <script>
 // import { handleClicks } from '@/mixins/handleClicks'
 export default {
+  async asyncData({ $content, params }) {
+    const doc = await $content(params.slug).fetch()
+    return { doc }
+  },
   // mixins: [handleClicks],
-
   data() {
     return {
       isLoading: true,
       doc: null,
     }
-  },
-  async created() {
-    this.doc = await this.$content(this.$route.params.slug).fetch()
-
-    this.isLoading = false
   },
   methods: {
     getMeta() {
