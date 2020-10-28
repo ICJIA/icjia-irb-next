@@ -1,5 +1,5 @@
 ---
-title: 'Meetings'
+title: 'Meeting Archive'
 description: "ICJIA's IRB Meetings"
 menuTitle: 'Meetings'
 showToc: false
