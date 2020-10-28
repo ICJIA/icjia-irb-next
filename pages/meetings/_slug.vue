@@ -10,7 +10,6 @@
           order="2"
           order-sm="2"
           class="markdown-body dynamic-content"
-          @click.prevent="handleClicks"
         >
           <h1>{{ doc.title }}</h1>
           <nuxt-content :document="doc" />
@@ -35,9 +34,9 @@
 </template>
 
 <script>
-import { handleClicks } from '@/mixins/handleClicks'
+// import { handleClicks } from '@/mixins/handleClicks'
 export default {
-  mixins: [handleClicks],
+  // mixins: [handleClicks],
   async asyncData({ $content, params }) {
     const doc = await $content(`meetings/${params.slug}`).fetch()
     return { doc }

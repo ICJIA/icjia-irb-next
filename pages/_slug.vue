@@ -11,7 +11,6 @@
             order="2"
             order-sm="2"
             class="markdown-body dynamic-content"
-            @click="handleClicks"
           >
             <h1>{{ doc.title }}</h1>
             <nuxt-content :document="doc" class="" />
@@ -39,9 +38,9 @@
 </template>
 
 <script>
-import { handleClicks } from '@/mixins/handleClicks'
+// import { handleClicks } from '@/mixins/handleClicks'
 export default {
-  mixins: [handleClicks],
+  // mixins: [handleClicks],
 
   data() {
     return {

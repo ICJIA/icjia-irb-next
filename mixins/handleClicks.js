@@ -15,28 +15,17 @@ export const handleClicks = {
       const isAFile = /^.*\.(pdf|doc|docx|xls|xlsx|zip|csv|json|txt)$/i.test(
         href
       )
-      console.log('click')
+      // console.log('click')
       if (isAFile) {
         // $event.preventDefault()
         const filename = href.split('/').pop()
         console.log('Download event: ', filename)
-        // console.log(target)
-
-        // console.log('download path: ', path)
-
-        // this.$ga.event({
-        //   eventCategory: "File",
-        //   eventAction: "Download",
-        //   eventLabel: filename
-        // });
 
         this.$gtag('event', 'download', {
           eventCategory: 'File',
           eventAction: 'Download',
           eventLabel: filename,
         })
-
-        // location.href = path
       } else {
         return null
       }
