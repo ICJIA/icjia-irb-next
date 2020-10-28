@@ -17,7 +17,7 @@
         class="mb-2 hover anchor visible"
         @click="$vuetify.goTo(0)"
       >
-        {{ `${'ON THIS PAGE'.toUpperCase()}` }}
+        {{ `${heading.toUpperCase()}` }}
       </div>
     </div>
 
