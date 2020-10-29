@@ -22,6 +22,8 @@
           order-md="2"
           order="1"
           order-sm="1"
+          class="markdown-body dynamic-content"
+          @click="handleClicks"
         >
           <toc :toc="doc.toc"></toc>
         </v-col>
@@ -34,9 +36,9 @@
 </template>
 
 <script>
-// import { handleClicks } from '@/mixins/handleClicks'
+import { handleClicks } from '@/mixins/handleClicks'
 export default {
-  // mixins: [handleClicks],
+  mixins: [handleClicks],
   async asyncData({ $content, params }) {
     const doc = await $content(`meetings/${params.slug}`).fetch()
     return { doc }
