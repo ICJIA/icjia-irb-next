@@ -21,10 +21,9 @@ export const handleClicks = {
         const filename = href.split('/').pop()
         console.log('Download event: ', filename)
 
-        this.$gtag('event', 'client_file_download', {
+        this.$gtag('event', 'irb_file_download', {
           event_category: 'File',
           event_label: filename,
-          value: 100,
         })
         console.log('gtag sent')
       }
