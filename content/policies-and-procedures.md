@@ -21,6 +21,13 @@ If you do not have access to a university's training, you can complete ICJIA's t
 
 To gain an understanding of ICJIA's internal review procedures, please watch this [video](https://www.youtube.com/watch?v=fDon2ksEpp8&t=56s) and review the IRB application process [here](ApplicationProcess.pdf).
 
+<!-- <div class="text-center mt-12 mb-12 embed" >
+  <div class="videoWrapper">
+    <iframe height="315" width="560" src="https://www.youtube.com/embed/C6-qCnIsNjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+</div> -->
+
 ## Forms and Templates
 
 Below you will find links to blank forms that can be completed and submitted to the IRB for review, based on the type of application you are submitting:
