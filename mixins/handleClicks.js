@@ -22,7 +22,7 @@ export const handleClicks = {
         console.log('Download event: ', filename)
 
         this.$gtag('event', 'irb_file_download', {
-          event_category: 'File',
+          event_category: 'engagement',
           event_label: filename,
         })
         console.log('gtag sent')
