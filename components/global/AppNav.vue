@@ -21,7 +21,7 @@
       <span
         v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm"
         class="agency hover"
-        >IRB</span
+        >ICJIA IRB</span
       >
       <span v-else style="" class="agency hover"
         >INSTITUTIONAL REVIEW BOARD</span
@@ -33,16 +33,17 @@
       <v-btn
         v-for="(item, index) in items"
         :key="`nav-${index}`"
+        small
         :to="item.path === '/index' ? '/' : `${item.path}/`"
         text
         class="hidden-sm-and-down"
         style="font-weight: 900"
         :aria-label="item.title"
       >
-        <span v-if="item.menuTitle" style="font-size: 14px">
+        <span v-if="item.menuTitle" style="font-size: 13px">
           {{ item.menuTitle }}
         </span>
-        <span v-else style="font-size: 14px">{{ item.title }}</span>
+        <span v-else style="font-size: 13px">{{ item.title }}</span>
       </v-btn>
     </div>
     <div v-else>

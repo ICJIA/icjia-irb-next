@@ -5,7 +5,7 @@ menuTitle: 'Resources'
 showToc: false
 showInSitemap: true
 showInFooter: true
-showInNav: false
+showInNav: true
 showInSidebar: true
 createdAt: '2020-10-21'
 menuRank: 500
