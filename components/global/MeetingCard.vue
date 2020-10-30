@@ -25,7 +25,7 @@
         @click.stop.prevent="meeting.show = !meeting.show"
       >
         <!-- <v-icon medium>mdi-chevron-down</v-icon> -->
-        <v-btn x-small outlined color="#666">
+        <v-btn x-small outlined color="#666" class="mt-10">
           <v-icon medium>mdi-chevron-down</v-icon>
         </v-btn>
       </div>
@@ -37,7 +37,7 @@
             v-html="render(meeting.markdown)"
           ></div>
 
-          <v-container>
+          <v-container class="mt-5">
             <v-row>
               <v-col cols="12" xs="6" sm="6" class="text-center">
                 <v-btn
