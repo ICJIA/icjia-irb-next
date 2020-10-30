@@ -1,6 +1,7 @@
 <template>
   <v-app-bar color="white" fixed height="90" class="noprint" app>
     <v-app-bar-nav-icon
+      v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm"
       aria-label="Toggle Menu"
       style="color: black"
       large

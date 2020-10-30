@@ -19,6 +19,7 @@
     "version": "auto-changelog -p --commit-limit false --sort-commits date && git add CHANGELOG.md"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "@mdi/font": "^5.8.55",
     "@nuxt/content": "^1.10.0",
     "@nuxtjs/axios": "^5.12.2",
