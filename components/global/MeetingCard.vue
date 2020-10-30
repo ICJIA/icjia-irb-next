@@ -54,9 +54,6 @@
                 </v-btn>
               </v-col>
             </v-row>
-
-            <!-- <v-spacer></v-spacer>
-            -->
           </v-container>
         </div>
       </v-slide-y-transition>
