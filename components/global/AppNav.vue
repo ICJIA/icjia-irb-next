@@ -11,7 +11,7 @@
       :src="require('@/assets/icjia-logo.png')"
       :lazy-src="require('@/assets/icjia-logo-min.png')"
       alt="Illinois Criminal Justice Information Authority"
-      max-width="90"
+      max-width="60"
       style="margin-left: -5px; margin-right: 8px"
       class="hover"
       @click="gotoHome"
@@ -21,7 +21,7 @@
       <span
         v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm"
         class="agency hover"
-        >ICJIA IRB</span
+        ><span v-if="$vuetify.breakpoint.sm">ICJIA&nbsp;</span>IRB</span
       >
       <span v-else style="" class="agency hover"
         >INSTITUTIONAL REVIEW BOARD</span
