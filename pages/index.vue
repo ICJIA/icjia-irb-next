@@ -57,7 +57,7 @@
               </div>
             </div>
             <div class="text-center">
-              <v-btn x-small to="/meeting-archive/" outlined class="mt-0"
+              <v-btn x-small to="/meeting-archive/" class="mt-0"
                 >Meeting archive<v-icon x-small right
                   >chevron_right</v-icon
                 ></v-btn

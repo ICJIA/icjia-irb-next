@@ -21,10 +21,13 @@
       </div>
       <div
         v-if="!meeting.show"
-        class="text-right mt-4"
+        class="text-center mt-8"
         @click.stop.prevent="meeting.show = !meeting.show"
       >
-        <v-icon medium>mdi-chevron-down</v-icon>
+        <!-- <v-icon medium>mdi-chevron-down</v-icon> -->
+        <v-btn x-small outlined color="#666">
+          <v-icon medium>mdi-chevron-down</v-icon>
+        </v-btn>
       </div>
 
       <v-slide-y-transition>
@@ -34,16 +37,27 @@
             v-html="render(meeting.markdown)"
           ></div>
 
-          <div class="text-right mt-6">
-            <v-btn
-              x-small
-              color="#0D4474"
-              dark
-              @click.prevent="$router.push(`${meeting.path}/`)"
-              >Link <v-icon right>link</v-icon></v-btn
-            >&nbsp;&nbsp;&nbsp;
-            <v-icon medium>mdi-chevron-up</v-icon>
-          </div>
+          <v-container>
+            <v-row>
+              <v-col cols="12" xs="6" sm="6" class="text-center">
+                <v-btn
+                  x-small
+                  color="#0D4474"
+                  dark
+                  @click.prevent="$router.push(`${meeting.path}/`)"
+                  >Link <v-icon right>link</v-icon></v-btn
+                >
+              </v-col>
+              <v-col cols="12" xs="6" sm="6" class="text-center">
+                <v-btn x-small outlined>
+                  <v-icon medium>mdi-chevron-up</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
+
+            <!-- <v-spacer></v-spacer>
+            -->
+          </v-container>
         </div>
       </v-slide-y-transition>
     </v-card>

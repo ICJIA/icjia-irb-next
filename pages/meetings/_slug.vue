@@ -10,6 +10,7 @@
           order="2"
           order-sm="2"
           class="markdown-body dynamic-content"
+          @click="handleClicks"
         >
           <h1>{{ doc.title }}</h1>
           <nuxt-content :document="doc" />
@@ -22,8 +23,6 @@
           order-md="2"
           order="1"
           order-sm="1"
-          class="markdown-body dynamic-content"
-          @click="handleClicks"
         >
           <toc :toc="doc.toc"></toc>
         </v-col>
