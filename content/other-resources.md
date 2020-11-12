@@ -26,3 +26,5 @@ Many other resources exist to provide guidance on IRB related issues. Below are 
 - ["Does your study require IRB review?"](https://research.oregonstate.edu/irb/does-your-study-require-irb-review)
 
 - [Guidance: Is it Research?](https://www.washington.edu/research/policies/guidance-is-it-research-2/)
+
+- [DOJ Privacy Certificates](https://www.hhs.gov/ohrp/sites/default/files/ohrp/sachrp/mtgings/2013%20Jul%20Mtg/pptcertificatesofconfidentialitybywatson.pdf)

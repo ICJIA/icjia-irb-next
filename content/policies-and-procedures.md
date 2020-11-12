@@ -13,13 +13,11 @@ menuRank: 300
 
 ## Human Subject Research Training
 
-ICJIA researchers (staff and interns) and IRB members are required to receive a Human Subjects Research certification before they can participate in or review research. ICJIA recommends completing this training through your university if possible.
+ICJIA researchers (staff and interns) and IRB members are required to receive a Human Subjects Research certification before they can participate in or review research. ICJIA recommends completing this training through your university if possible. If you do not have access to a university's training, you can complete ICJIA's training. To complete this training, [click here](HSRTrainingCourse.pdf).
 
-If you do not have access to a university's training, you can complete ICJIA's training. To complete this training, [click here](HSRTrainingCourse.pdf).
+## Review Process 
 
-## Review Process
-
-To gain an understanding of ICJIA's internal review procedures, please watch this [video](https://www.youtube.com/watch?v=fDon2ksEpp8&t=56s) and review the IRB application process [here](ApplicationProcess.pdf).
+To gain an understanding of ICJIA's internal review procedures, please watch this video:
 
 <div class="text-center mt-5 mb-5 embed" >
    <div class="videoWrapper">
@@ -45,7 +43,6 @@ Below you will find links to blank forms that can be completed and submitted to 
 - [Broad Consent Form](BroadConsentTemplate.doc)
   -- For information on consent and what should be included, refer to this [guide](ConsentGuidance.pdf)
 - [Authorization Agreement Form](AuthorizationAgreementTemplate.docx)
+- [Privacy Certificates and Certificates of Confidentiality](PrivacyCertificateTemplate.doc)
+ -- For information on privacy certificates and how to obtain them, refer to this [guide](PrivacyCertificateSteps.pdf)
 
-### Privacy Certificates and Certificates of Confidentiality
-
-In situations where research projects expose particpants to greater than minimal risk, or as requested, researchers may obtain a privacy certificate or certificate of confidentiality. For more information on what these certificates do, and the steps to obtain them, [click here](PrivacyCertificateSteps.pdf). To obtain a privacy certificate template, [click here](PrivacyCertificateTemplate.doc).
