@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-card
+      outlined
       elevation="0"
-      color="grey lighten-4"
       class="mt-6 px-5 pt-3 pb-8 meetingCard"
       @click.native="meeting.show = !meeting.show"
     >
@@ -21,12 +21,16 @@
       </div>
       <div
         v-if="!meeting.show"
-        class="text-center mt-8"
+        class="text-right mt-8"
         @click.stop.prevent="meeting.show = !meeting.show"
       >
         <!-- <v-icon medium>mdi-chevron-down</v-icon> -->
-        <v-btn x-small outlined color="#666" class="mt-10">
+        <!-- <v-btn x-small outlined color="#666" class="mt-10">
           <v-icon medium>mdi-chevron-down</v-icon>
+        </v-btn> -->
+        <v-btn x-small outlined color="#666" class="mt-10">
+          <!-- <v-icon medium>mdi-chevron-down</v-icon> -->
+          Read more <v-icon x-small>mdi-chevron-down</v-icon>
         </v-btn>
       </div>
 
@@ -50,7 +54,7 @@
               </v-col>
               <v-col cols="12" xs="6" sm="6" class="text-center">
                 <v-btn x-small outlined>
-                  <v-icon medium>mdi-chevron-up</v-icon>
+                  <v-icon x-small>mdi-chevron-up</v-icon>
                 </v-btn>
               </v-col>
             </v-row>
