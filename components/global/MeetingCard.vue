@@ -2,7 +2,7 @@
   <div>
     <v-card
       outlined
-      elevation="0"
+      elevation="1"
       class="mt-6 px-5 pt-3 pb-8 meetingCard"
       @click.native="meeting.show = !meeting.show"
     >
