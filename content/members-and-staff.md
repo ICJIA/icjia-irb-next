@@ -25,7 +25,7 @@ Below is a description of ICJIA's IRB members and staff.
 | Dr. Dan Cooper      |                         | Director of Research, Metropolitan Planning Council                     |
 | Dr. Evan Harrington |                         | Associate Professor, Chicago School of Forensic Psychology              |
 | Dr. LaDonna Long    | Victim Representative   | Assistant Professor, Roosevelt University                               |
-| Maya Szilak         | Prisoner Representative | Policy and Research Specialist, John Howard Association of Illinois     |
+| Phil Whittington | Prisoner Representative | Corrections Policy Analyst, John Howard Association of Illinois     |
 | Dr. Amie Schuck     |                         | Associate Professor, University of Illinois at Chicago                  |
 
 ## IRB Staff
