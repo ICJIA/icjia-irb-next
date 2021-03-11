@@ -2,7 +2,7 @@
 title: 'Additional Resources'
 description: "Additional resources for ICJIA's IRB."
 menuTitle: 'Resources'
-showToc: false
+showToc: true
 showInSitemap: true
 showInFooter: true
 showInNav: true
@@ -29,4 +29,4 @@ Many other resources exist to provide guidance on IRB related issues. Below are 
 
 - [DOJ Privacy Certificates](https://www.hhs.gov/ohrp/sites/default/files/ohrp/sachrp/mtgings/2013%20Jul%20Mtg/pptcertificatesofconfidentialitybywatson.pdf)
 
-- [Proram Evaluation: When is it Research?](https://www.wcasa.org/wp-content/uploads/2020/03/Evaluation_Research-Paper-What-is-the-Difference-between-Evaluation-and-Research-and-why-do-we-Care.pdf)
+- [Program Evaluation: When is it Research?](https://www.wcasa.org/wp-content/uploads/2020/03/Evaluation_Research-Paper-What-is-the-Difference-between-Evaluation-and-Research-and-why-do-we-Care.pdf)
