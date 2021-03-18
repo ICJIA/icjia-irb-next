@@ -52,11 +52,11 @@
                   >Link <v-icon right>link</v-icon></v-btn
                 >
               </v-col>
-              <v-col cols="12" xs="6" sm="6" class="text-center">
+              <!-- <v-col cols="12" xs="6" sm="6" class="text-center">
                 <v-btn x-small outlined>
-                  <v-icon x-small>mdi-chevron-up</v-icon>
+                  <v-icon x-small class="showHide">mdi-chevron-up</v-icon>
                 </v-btn>
-              </v-col>
+              </v-col> -->
             </v-row>
           </v-container>
         </div>
@@ -68,12 +68,19 @@
 <script>
 import { format } from 'date-fns'
 import { renderToHtml } from '@/services/markdown'
+// eslint-disable-next-line no-unused-vars
+import { fixButtonText } from '@/a11y'
+
 export default {
   props: {
     meeting: {
       type: Object,
       default: () => {},
     },
+  },
+  async mounted() {
+    await this.$nextTick()
+    console.log('mounted')
   },
   methods: {
     formatDate(scheduled) {

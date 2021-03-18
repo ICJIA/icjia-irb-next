@@ -27,7 +27,7 @@
                 color="grey lighten-5"
                 @click="route(result)"
               >
-                <v-btn
+                <!-- <v-btn
                   v-if="result.file"
                   color="#0d4474"
                   fab
@@ -39,7 +39,7 @@
                   @click="route(result)"
                 >
                   <v-icon>mdi-cloud-download</v-icon>
-                </v-btn>
+                </v-btn> -->
 
                 <div
                   v-if="result.file"
@@ -63,12 +63,12 @@
                   ><div v-html="result.description"></div
                 ></v-card-text>
 
-                <v-card-text
-                  v-if="result.headings"
+                <!-- <v-card-text
+                  v-if="result.headings && result.headings.length"
                   style="margin-top: -15px; margin-left: 15px"
                 >
                   <h3 v-html="displayHeadings(result.headings)"></h3>
-                </v-card-text>
+                </v-card-text> -->
               </v-card>
             </div>
             <!-- {{ queryResults }} -->
