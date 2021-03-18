@@ -21,7 +21,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@mdi/font": "^5.8.55",
-    "@nuxt/content": "^1.10.0",
+    "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/feed": "^2.0.0",
@@ -44,7 +44,9 @@
     "moment-timezone": "^0.5.31",
     "nuxt": "^2.14.7",
     "nuxt-material-design-icons": "^1.0.4",
+    "rehype-minify-whitespace": "^4.0.5",
     "remark-footnotes": "2.0.0",
+    "remark-grid-tables": "^2.1.2",
     "remark-parse": "^9.0.0"
   },
   "devDependencies": {

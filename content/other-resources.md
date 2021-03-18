@@ -2,7 +2,7 @@
 title: 'Additional Resources'
 description: "Additional resources for ICJIA's IRB."
 menuTitle: 'Resources'
-showToc: true
+showToc: false
 showInSitemap: true
 showInFooter: true
 showInNav: true

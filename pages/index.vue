@@ -76,6 +76,7 @@
 
 <script>
 // import { EventBus } from '@/event-bus'
+import { fixNuxtContentHeadings } from '@/a11y'
 import { handleClicks } from '@/mixins/handleClicks'
 export default {
   mixins: [handleClicks],
@@ -101,7 +102,13 @@ export default {
     }
   },
   created() {},
-  mounted() {},
+  async mounted() {
+    await this.$nextTick()
+    fixNuxtContentHeadings('h2, h3')
+    document
+      .getElementsByClassName('nuxt-content-editor')[0]
+      .setAttribute('class', 'democlass')
+  },
   methods: {
     dynamicFlex() {
       if (this.$vuetify.breakpoint.xs || this.$vuetify.breakpoint.sm) {

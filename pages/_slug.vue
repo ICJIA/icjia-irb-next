@@ -40,6 +40,7 @@
 
 <script>
 import { handleClicks } from '@/mixins/handleClicks'
+import { fixNuxtContentHeadings } from '@/a11y'
 export default {
   mixins: [handleClicks],
   async asyncData({ $content, params }) {
@@ -51,6 +52,10 @@ export default {
       isLoading: true,
       doc: null,
     }
+  },
+  async mounted() {
+    await this.$nextTick()
+    fixNuxtContentHeadings('h2, h3')
   },
   methods: {
     getMeta() {

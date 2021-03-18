@@ -147,6 +147,8 @@ export default {
    ** See https://content.nuxtjs.org/configuration
    */
   content: {
+    markdown: {},
+    liveEdit: false,
     fullTextSearchFields: ['title', 'summary', 'slug'],
   },
   hooks: {
