@@ -1,37 +1,35 @@
 <template>
-  <client-only>
-    <v-container v-if="doc" style="margin-top: 90px" role="main">
-      <v-row>
-        <v-col
-          cols="12"
-          sm="12"
-          :md="dynamicFlex()"
-          order-md="1"
-          order="2"
-          order-sm="2"
-          class="markdown-body dynamic-content"
-          @click="handleClicks"
-        >
-          <h1>{{ doc.title }}</h1>
-          <nuxt-content :document="doc" />
-        </v-col>
-        <v-col
-          v-if="doc.showToc"
-          cols="12"
-          sm="12"
-          md="3"
-          order-md="2"
-          order="1"
-          order-sm="1"
-        >
-          <toc :toc="doc.toc"></toc>
-        </v-col>
-      </v-row>
-    </v-container>
-    <v-container v-else>
-      <Loader></Loader>
-    </v-container>
-  </client-only>
+  <v-container v-if="doc" style="margin-top: 90px" role="main">
+    <v-row>
+      <v-col
+        cols="12"
+        sm="12"
+        :md="dynamicFlex()"
+        order-md="1"
+        order="2"
+        order-sm="2"
+        class="markdown-body dynamic-content"
+        @click="handleClicks"
+      >
+        <h1>{{ doc.title }}</h1>
+        <nuxt-content :document="doc" />
+      </v-col>
+      <v-col
+        v-if="doc.showToc"
+        cols="12"
+        sm="12"
+        md="3"
+        order-md="2"
+        order="1"
+        order-sm="1"
+      >
+        <toc :toc="doc.toc"></toc>
+      </v-col>
+    </v-row>
+  </v-container>
+  <v-container v-else>
+    <Loader></Loader>
+  </v-container>
 </template>
 
 <script>

@@ -46,20 +46,21 @@
 
           <v-container class="mt-5">
             <v-row>
-              <v-col cols="12" xs="6" sm="6" class="text-center">
+              <v-col cols="12" class="text-center">
                 <v-btn
                   x-small
                   color="#0D4474"
                   dark
                   @click.prevent="$router.push(`${meeting.path}/`)"
-                  >Link <v-icon right>link</v-icon></v-btn
-                >
-              </v-col>
-              <!-- <v-col cols="12" xs="6" sm="6" class="text-center">
-                <v-btn x-small outlined>
-                  <v-icon x-small class="showHide">mdi-chevron-up</v-icon>
+                  >Link
+                  <!-- <v-icon right>link</v-icon> -->
+                  <span
+                    class="mdi mdi-link"
+                    aria-label="Go to the direct link for the meeting information"
+                    aria-hidden="true"
+                  ></span>
                 </v-btn>
-              </v-col> -->
+              </v-col>
             </v-row>
           </v-container>
         </div>
