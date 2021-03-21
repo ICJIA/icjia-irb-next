@@ -29,7 +29,7 @@ export default {
     script: [
       {
         src:
-          'http://cdn.jsdelivr.net/gh/icjia/doit-accessibility/dist/index.js',
+          'https://cdn.jsdelivr.net/gh/icjia/doit-accessibility/dist/index.js',
       },
     ],
     link: [
