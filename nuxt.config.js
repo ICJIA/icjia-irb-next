@@ -27,7 +27,10 @@ export default {
     ],
 
     script: [
-      // { src: 'https://www.googletagmanager.com/gtag/js?id=G-4DLM9P8M72' },
+      {
+        src:
+          'http://cdn.jsdelivr.net/gh/icjia/doit-accessibility/dist/index.js',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/irb/favicon.ico' },
