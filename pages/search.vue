@@ -11,6 +11,12 @@
             placeholder="Search IRB"
             @input="instantSearch"
           />
+          <input
+            type="submit"
+            aria-label="This submit button does nothing. The form submits automatically."
+            aria-hidden="true"
+            style="visibility: hidden"
+          />
           <div style="font-size: 12px" class="text-right mb-9">
             {{ queryResults.length }} result{{ resultNumber }}
           </div>
@@ -34,7 +40,7 @@
                     font-weight: bold;
                     font-size: 12px;
                     margin-top: 5px;
-                    color: #0d4474;
+                    color: #000;
                     text-transform: uppercase;
                   "
                 >
@@ -46,6 +52,7 @@
                 </div>
                 <v-card-text
                   v-if="result.description && result.type === 'content'"
+                  style="color: #000"
                   ><div v-html="result.description"></div
                 ></v-card-text>
 
