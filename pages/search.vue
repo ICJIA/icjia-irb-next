@@ -13,7 +13,7 @@
           />
           <input
             type="submit"
-            aria-label="This submit button does nothing. The form submits automatically."
+            aria-label="This submit button is not needed for results."
             aria-hidden="true"
             style="visibility: hidden"
           />
@@ -55,20 +55,11 @@
                   style="color: #000"
                   ><div v-html="result.description"></div
                 ></v-card-text>
-
-                <!-- <v-card-text
-                  v-if="result.headings && result.headings.length"
-                  style="margin-top: -15px; margin-left: 15px"
-                >
-                  <h3 v-html="displayHeadings(result.headings)"></h3>
-                </v-card-text> -->
               </v-card>
             </div>
-            <!-- {{ queryResults }} -->
           </div>
-        </v-form>
-      </v-col></v-container
-    >
+        </v-form> </v-col
+    ></v-container>
   </div>
 </template>
 
