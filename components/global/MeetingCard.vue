@@ -3,7 +3,7 @@
     <v-card
       outlined
       elevation="1"
-      class="mt-6 px-5 pt-3 pb-8 meetingCard"
+      class="mt-6 px-5 pt-3 pb-8"
       @click.native="meeting.show = !meeting.show"
     >
       <div v-if="meeting.scheduled" class="meetingDate text-right">
@@ -24,13 +24,16 @@
         class="text-right mt-8"
         @click.stop.prevent="meeting.show = !meeting.show"
       >
-        <!-- <v-icon medium>mdi-chevron-down</v-icon> -->
-        <!-- <v-btn x-small outlined color="#666" class="mt-10">
-          <v-icon medium>mdi-chevron-down</v-icon>
-        </v-btn> -->
-        <v-btn x-small outlined color="#666" class="mt-10">
-          <!-- <v-icon medium>mdi-chevron-down</v-icon> -->
-          Read more <v-icon x-small>mdi-chevron-down</v-icon>
+        <v-btn x-small outlined color="#000" class="mt-10">
+          Read more
+          <!-- <v-icon x-small>mdi-chevron-down</v-icon> -->
+
+          <span
+            class="mdi mdi-chevron-down"
+            aria-label="Show full meeting information"
+            aria-hidden="true"
+            style="color: black"
+          ></span>
         </v-btn>
       </div>
 
@@ -93,19 +96,4 @@ export default {
 }
 </script>
 
-<style>
-.meetingCard {
-  cursor: pointer;
-}
-
-.meetingDate {
-  font-weight: bold;
-  font-size: 12px;
-  color: #555;
-}
-.meetingTitle {
-  font-weight: bold;
-  font-size: 22px;
-  color: #555;
-}
-</style>
+<style></style>

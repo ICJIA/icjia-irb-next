@@ -1,12 +1,15 @@
 <template>
-  <v-app>
-    <div style="min-height: 100vh !important">
-      <AppNav></AppNav>
-      <AppSidebar></AppSidebar>
-      <nuxt class="" />
-    </div>
-    <AppFooter></AppFooter>
-  </v-app>
+  <div>
+    <SkipLinks></SkipLinks>
+    <v-app>
+      <div style="min-height: 100vh !important">
+        <AppNav></AppNav>
+        <AppSidebar></AppSidebar>
+        <nuxt id="main" class="" />
+      </div>
+      <AppFooter></AppFooter>
+    </v-app>
+  </div>
 </template>
 <script>
 export default {

@@ -5,6 +5,7 @@
       color="primary"
       :size="size"
       :width="width"
+      aria-label="Loading ..."
     ></v-progress-circular>
     <div
       v-if="!hideText"

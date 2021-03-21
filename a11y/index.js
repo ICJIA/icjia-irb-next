@@ -1,11 +1,13 @@
 // Fix Vuetify empty buttons
 const fixButtonText = function (myClass, myText) {
   const myButtons = document.getElementsByClassName(myClass)
+
   for (let i = 0, len = myButtons.length; i < len; ++i) {
     const el = document.createElement('span')
     el.innerHTML = myText
     el.classList.add('aria-hidden')
     myButtons[i].appendChild(el)
+    // console.log('a11y: fixed buttons: ', myButtons[i])
   }
 }
 
@@ -20,22 +22,19 @@ const fixBlankTableHeadings = function () {
   }
 }
 
-// fix empty H2 headings with Nuxt Content
-const fixNuxtContentHeadings = function (querySelectors) {
+// fix empty H2 headings with Nuxt 2.14+ sites using nuxt-content
+const fixNuxtContentHeadings = function (querySelectors = 'H2, H3') {
   const els = document.querySelectorAll(querySelectors)
   for (let i = 0, len = els.length; i < len; ++i) {
     const subEl = els[i].querySelectorAll('a')
+    // console.log('a11y: fixed content heading: ', els[i])
     for (let i = 0, len = subEl.length; i < len; ++i) {
       subEl[i].remove()
     }
   }
 }
 
-const fixNuxtTextArea = function (myClass, myText) {}
+// Only in dev mode for new Nuxt 2.14+ sites using nuxt-content
+// const fixNuxtTextArea = function (myClass, myText) {};
 
-export {
-  fixButtonText,
-  fixBlankTableHeadings,
-  fixNuxtContentHeadings,
-  fixNuxtTextArea,
-}
+export { fixButtonText, fixBlankTableHeadings, fixNuxtContentHeadings }

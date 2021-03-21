@@ -1,17 +1,24 @@
 <template>
   <v-app-bar color="white" fixed height="90" class="noprint" app>
-    <v-app-bar-nav-icon
+    <!-- <v-app-bar-nav-icon
       v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm"
-      aria-label="Toggle Menu"
+      aria-label="Click this to toggle the sidebar menu"
       style="color: black"
       large
       @click="toggleDrawer"
-    />
+    /> -->
+    <span
+      class="mdi mdi-menu hover"
+      aria-label="Toggle Menu"
+      aria-hidden="true"
+      style="color: black; font-size: 30px"
+      @click="toggleDrawer"
+    ></span>
     <div style="width: 15px" />
     <v-img
       :src="require('@/assets/icjia-logo.png')"
       :lazy-src="require('@/assets/icjia-logo-min.png')"
-      alt="Illinois Criminal Justice Information Authority"
+      alt="Illinois Criminal Justice Information Authority logo"
       max-width="60"
       style="margin-left: -5px; margin-right: 8px"
       class="hover"
@@ -57,7 +64,13 @@
       ></Loader>
     </div>
     <v-btn icon to="/search/" aria-label="Search">
-      <v-icon aria-label="Search">mdi-magnify</v-icon>
+      <!-- <v-icon aria-label="Search">mdi-magnify</v-icon> -->
+      <span
+        class="mdi mdi-magnify"
+        aria-label="Go to search page"
+        aria-hidden="true"
+        style="color: black; font-size: 24px"
+      ></span>
     </v-btn>
   </v-app-bar>
 </template>

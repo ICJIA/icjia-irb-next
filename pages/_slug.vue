@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top: 90px">
+  <div style="margin-top: 90px" role="main">
     <client-only>
       <v-container v-if="doc">
         <v-row>

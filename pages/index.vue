@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top: 90px">
+  <div style="margin-top: 90px" role="main">
     <client-only>
       <v-container v-if="doc">
         <v-row>
@@ -57,11 +57,9 @@
               </div>
             </div>
             <div class="text-center">
-              <v-btn x-small to="/meeting-archive/" class="mt-0"
-                >Meeting archive<v-icon x-small right
-                  >chevron_right</v-icon
-                ></v-btn
-              >
+              <v-btn small to="/meeting-archive/" class="mt-0"
+                >Meeting archive
+              </v-btn>
             </div>
           </v-col>
           <div></div>
@@ -105,9 +103,6 @@ export default {
   async mounted() {
     await this.$nextTick()
     fixNuxtContentHeadings('h2, h3')
-    document
-      .getElementsByClassName('nuxt-content-editor')[0]
-      .setAttribute('class', 'democlass')
   },
   methods: {
     dynamicFlex() {

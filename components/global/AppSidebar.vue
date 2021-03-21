@@ -14,9 +14,9 @@
           </v-list-item-content>
         </v-list-item>
         <div v-for="item in items" :key="item.title">
-          <div v-if="item.dividerBefore" class="my-2">
+          <!-- <div v-if="item.dividerBefore" class="my-2">
             <v-divider />
-          </div>
+          </div> -->
           <v-list-item link :to="`${item.path}/`">
             <v-list-item-content>
               <h3>
@@ -29,11 +29,11 @@
               </h3>
             </v-list-item-content>
           </v-list-item>
-          <div v-if="item.dividerAfter" class="my-2">
+          <!-- <div v-if="item.dividerAfter" class="my-2">
             <v-divider />
-          </div>
+          </div> -->
         </div>
-        <v-divider></v-divider>
+        <!-- <v-divider></v-divider> -->
         <v-list-item link to="/search/">
           <v-list-item-content>
             <h3>Search</h3>

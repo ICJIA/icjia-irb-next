@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top: 90px">
+  <div style="margin-top: 90px" role="main">
     <v-container
       ><v-col cols="12">
         <h1>Search IRB</h1>
@@ -27,20 +27,6 @@
                 color="grey lighten-5"
                 @click="route(result)"
               >
-                <!-- <v-btn
-                  v-if="result.file"
-                  color="#0d4474"
-                  fab
-                  small
-                  absolute
-                  top
-                  left
-                  dark
-                  @click="route(result)"
-                >
-                  <v-icon>mdi-cloud-download</v-icon>
-                </v-btn> -->
-
                 <div
                   v-if="result.file"
                   class="text-right"

@@ -133,10 +133,10 @@ export default {
   position: -webkit-sticky !important; /* Safari */
   position: sticky !important;
   top: 125px !important;
-  font-size: 13px;
+  font-size: 12px;
 }
 .visible {
-  color: #116bb9 !important;
+  color: #000 !important;
   font-weight: bold;
 }
 .anchor {
