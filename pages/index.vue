@@ -38,6 +38,7 @@
             order="3"
             order-sm="3"
           >
+            <h2>Upcoming Meetings</h2>
             <div v-if="meetings">
               <div
                 v-for="(meeting, index) in meetings"

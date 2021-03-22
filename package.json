@@ -8,7 +8,7 @@
     "email": "christopher.schweda@illinois.gov"
   },
   "scripts": {
-    "dev": "node generateSearchIndex && DEPLOY_ENV=DEV nuxt",
+    "dev": "node generateSearchIndex && node generateApi && DEPLOY_ENV=DEV nuxt",
     "build": "node generateSearchIndex && node generateApi && DEPLOY_ENV=GEN nuxt generate && npm run banner",
     "start": "nuxt start",
     "generate": "node generateSearchIndex && node generateApi && DEPLOY_ENV=GEN nuxt generate && npm run banner",
