@@ -20,33 +20,8 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.includes"></script>
-    <style>
-      #main {
-        margin-top: 50px;
-      }
-      a {
-        color: black;
-        font-weight: bold;
-      }
-      a:focus {
-        border: 2px solid #000;
-      }
-      #pageTitle {
-        margin-top: 30px;
-        margin-bottom: 30px;
-      }
-      .nav-item.active {
-        text-decoration: underline !important;
-      }
-      .nav-item .nav-link {
-        color: #eee;
-      }
-
-      .nav-link {
-        color: #eee !important;
-      }
-    </style>
+    <link rel="stylesheet" href="ie11.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.includes%2CString.prototype.includes"></script>
   </head>
 
   <body>
@@ -62,7 +37,7 @@
       id="navigation"
       aria-labelledby="navigation"
     >
-      <a class="navbar-brand" href="#">ICJIA IRB</a>
+      <a class="navbar-brand" href="/irb/ie11/">ICJIA IRB</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -104,8 +79,15 @@
       <div class="container">
         <h1 style="" id="pageTitle">ICJIA's Institutional Review Board</h1>
         <div id="app">LOADING</div>
+        <div class="text-center" id="footer">
+        This site is optimized for Internet Explorer 11.<br/>
+          <a href ="https://icjia.illinois.gov/irb/"
+            >Click here to see the full IRB site.</a
+          >
+          </div>
       </div>
-    </div>
+
+    <div role="contentinfo" class="site-footer text-center"></div>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -166,6 +148,7 @@
           $(this).addClass('table')
           $(this).addClass('table-striped')
         })
+        $('#footer').show()
       })
     </script>
   </body>

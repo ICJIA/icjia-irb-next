@@ -21,32 +21,7 @@
       crossorigin="anonymous"
     />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.includes%2CString.prototype.includes"></script>
-    <style>
-      #main {
-        margin-top: 50px;
-      }
-      a {
-        color: black;
-        font-weight: bold;
-      }
-      a:focus {
-        border: 2px solid #000;
-      }
-      #pageTitle {
-        margin-top: 30px;
-        margin-bottom: 30px;
-      }
-      .nav-item.active {
-        text-decoration: underline !important;
-      }
-      .nav-item .nav-link {
-        color: #eee;
-      }
-
-      .nav-link {
-        color: #eee !important;
-      }
-    </style>
+    <link rel="stylesheet" href="ie11.css" />
   </head>
 
   <body>
@@ -62,7 +37,7 @@
       id="navigation"
       aria-labelledby="navigation"
     >
-      <a class="navbar-brand" href="#">ICJIA IRB</a>
+      <a class="navbar-brand" href="/irb/ie11/">ICJIA IRB</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -77,12 +52,12 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="index.html"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="meetings.html">Meetings</a>
           </li>
           <li class="nav-item">
@@ -104,6 +79,12 @@
       <div class="container">
         <h1 style="" id="pageTitle">ICJIA's Institutional Review Board</h1>
         <div id="app">LOADING</div>
+        <div class="text-center" id="footer">
+          This site is optimized for Internet Explorer 11.<br />
+          <a href="https://icjia.illinois.gov/irb/"
+            >Click here to see the full IRB site.</a
+          >
+        </div>
       </div>
     </div>
 
@@ -166,6 +147,7 @@
           $(this).addClass('table')
           $(this).addClass('table-striped')
         })
+        $('#footer').show()
       })
     </script>
   </body>
