@@ -87,7 +87,7 @@
         $('a').each(function () {
           var oldHref = $(this).attr('href')
           if (oldHref.includes('pdf')) {
-            var newHref = '/' + oldHref
+            var newHref = '/irb/' + oldHref
             $(this).attr('href', newHref)
           }
         })
