@@ -129,7 +129,7 @@
       var jqxhr = $.getJSON('/irb/api.json', function (data) {
         var arr = []
         $.map(data, function (obj) {
-          if (obj.route.includes('meetings')) {
+          if (obj.route.includes('policies-and-procedures')) {
             arr.push(obj)
           }
         })
@@ -154,6 +154,7 @@
         })
 
         // Fix links to point to correct destination
+        // TODO: Make sure this only fixes local links
         $('a').each(function () {
           var oldHref = $(this).attr('href')
           if (oldHref.includes('pdf')) {
@@ -161,6 +162,7 @@
             $(this).attr('href', newHref)
           }
         })
+
         // Add Bootstrap table class
         $('table').each(function () {
           $(this).addClass('table')

@@ -129,7 +129,7 @@
       var jqxhr = $.getJSON('/irb/api.json', function (data) {
         var arr = []
         $.map(data, function (obj) {
-          if (obj.route.includes('meetings')) {
+          if (obj.route.includes('members-and-staff')) {
             arr.push(obj)
           }
         })
