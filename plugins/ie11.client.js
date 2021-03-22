@@ -1,5 +1,5 @@
 if (isIE(window.navigator.userAgent)) {
-  window.location.href = '/ie11/index.html'
+  window.location.href = '/irb/ie11/index.html'
 }
 
 function isIE(ua) {
