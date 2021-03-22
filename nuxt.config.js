@@ -62,7 +62,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~/plugins/static-mixin.js'],
+  plugins: ['~/plugins/static-mixin.js', '~/plugins/ie11.client.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
