@@ -1,37 +1,47 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
 
-<head>
-  <!-- Required meta tags -->
+<head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>ICJIA IRB | IE11 Version</title>
+  <meta name="description"
+    content="The Accessibility Boilerplate is a basic HTML template to kickstart your web project responsibly.">
+  <meta name="keywords"
+    content="icjia, irb">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>(function (e) { e.className = e.className.replace('no-js', 'js'); }(document.documentElement));</script>
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="//unpkg.com/axios/dist/axios.min.js"></script> -->
+    <style>
+      a {color: black; font-weight: bold}
+      a:focus {border: 2px solid #000}
+    </style>
 </head>
 
 <body>
+  <header role="banner" class="site-header">
+    <nav class="site-header-quick-menu">
+     <a href="#content">Skip to content</a>
+    </nav>
+  </header>
 
-  <div class="container">
-    <div>
+  <div id="content" role="main" tabindex="-1">
+    <div class="container">
 
 
-      <h1 style="margin-bottom: 30px">TODO: Show stripped down, minimal IE11 site here</h1>
-
-      <div id="app">LOADING...</div>
-
-
+    <h1 style="margin-bottom: 30px">TODO: Show stripped down, minimal IE11 site here</h1>
+    <div id="app">LOADING</div>
     </div>
-
   </div>
 
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -39,17 +49,17 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <script>
+<script>
 
-    var jqxhr = $.getJSON("/irb/api.json", function (data) {
+  var jqxhr = $.getJSON("/irb/api.json", function (data) {
+    $.map(data, function (obj) {
+      if (obj.route === "/") {
+        $("#app").html(obj.html);
+      }
+    });
+  })
+</script>
 
-        $.map(data, function (obj) {
-        if (obj.route === "/") {
-          $("#app").html(obj.html);
-        }
-      });
-      })
-      </script>
 </body>
 
 </html>
