@@ -29,16 +29,19 @@ a:focus {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.nav-item.active {
-  text-decoration: underline !important;
-}
-.nav-item .nav-link {
+
+/* .nav-item .nav-link {
   color: #eee;
 }
 
 .nav-link {
-  color: #eee !important;
+  color: #eee;
 }
+
+.nav-item.active {
+  text-decoration: underline;
+  color: #ddd;
+} */
 #footer {
   display: none;
 }
