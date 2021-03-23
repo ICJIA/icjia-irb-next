@@ -45,3 +45,27 @@ a:focus {
 #footer {
   display: none;
 }
+
+a.offscreen {
+  position: absolute !important;
+  left: -1000px !important;
+  top: -1000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  text-align: left !important;
+  overflow: hidden !important;
+}
+
+a.offscreen:focus,
+a.offscreen:active,
+a.offscreen:hover {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  background-color: #fff !important;
+  border: 1px dotted #000 !important;
+  z-index: 10000 !important;
+}
