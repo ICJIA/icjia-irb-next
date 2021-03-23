@@ -32,16 +32,15 @@ a:focus {
 
 /* .nav-item .nav-link {
   color: #eee;
-}
-
-.nav-link {
-  color: #eee;
-}
+} */
 
 .nav-item.active {
   text-decoration: underline;
-  color: #ddd;
-} */
+}
+
+.nav-link {
+  color: #eee !important;
+}
 #footer {
   display: none;
 }
