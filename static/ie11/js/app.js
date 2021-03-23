@@ -62,9 +62,15 @@ $.fn.renderSkipLinks = function () {
   $('#skipLinks').load('/irb/ie11/includes/skipLinks.html')
 }
 
-var appInit = function () {
+$.fn.renderFooter = function () {
+  // TODO: Need to do this programmatically.
+  $('#footer').load('/irb/ie11/includes/footer.html')
+}
+
+var pageInit = function (route, target, matchType) {
   $(this).renderSkipLinks()
   $(this).renderNavbar()
-  $(this).renderContent('/', '#app', 'exact')
+  $(this).renderContent(route, target, matchType)
+  $(this).renderFooter()
 }
-window.appInit = appInit
+window.pageInit = pageInit
