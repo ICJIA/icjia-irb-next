@@ -8,19 +8,15 @@
     <meta name="keywords" content="icjia, irb" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script>
-      ;(function (e) {
-        e.className = e.className.replace('no-js', 'js')
-      })(document.documentElement)
-    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.9.1/minified.js"
       integrity="sha512-4I6KlXURpSYQwerMyq1LvMPu5YXs35Zim0abhd3VSrHVreGcKZvfzC97ZBgS3qTChQUBEyHM8mkePNbCdKLeug=="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
-      integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
       crossorigin="anonymous"
     ></script>
 
@@ -31,68 +27,19 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="ie11.css" />
+    <link rel="stylesheet" href="css/ie11.css" />
   </head>
 
   <body>
-    <header role="banner" class="site-header" id="banner">
-      <nav class="site-header-quick-menu" aria-label="Skip to content">
-        <a href="#content" class="offscreen">Skip to content</a>
-        <a href="/irb/" class="offscreen">Skip to full site</a>
-      </nav>
-    </header>
-
-    <div
-      class="navbar navbar-expand-lg navbar-dark bg-dark"
-      role="navigation"
-      id="navigation"
-      aria-labelledby="navigation"
-    >
-      <a class="navbar-brand" href="/irb/ie11/">ICJIA IRB</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="meetings.html">Meetings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="members-and-staff.html"
-              >Members and Staff</a
-            >
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="policies.html">Policies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="resources.html">Resources</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
+    <div id="skipLinks"></div>
+    <div id="navbar"></div>
     <div id="content" role="main" tabindex="-1" id="main">
       <div class="container">
         <h1 id="pageTitle" class="text-center" style="margin-top: 40px">
           ICJIA's Institutional Review Board
         </h1>
         <div id="loader" class="text-center" style="margin-top: 30px">
-          <img src="Spinner-2.gif" alt="Loading..." />
+          <img src="img/spinner-2.gif" alt="Loading..." />
         </div>
         <div id="app"></div>
         <div class="text-center" id="footer">
@@ -104,11 +51,6 @@
       </div>
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -122,53 +64,12 @@
 
     <!-- Custom script starts here -->
 
-    <script type="text/babel">
-      ;(function () {
-        let jqxhr = $.getJSON('/irb/api.json', function (data) {
-          let arr = []
-          $.map(data, function (obj) {
-            if (obj.route.includes('policies-and-procedures')) {
-              arr.push(obj)
-            }
-          })
-          let content = '<div>'
-          $.each(arr, function (key, value) {
-            content =
-              content +
-              `
-              <div class="content-item" style="padding-bottom: 30px; margin-bottom: 50px; border-bottom: 1px solid #333">
-                <h2 id=${key}>${value.title} </h2>
-                  ${value.html}</div>
-              `
-          })
-          content = content + '</div>'
-
-          $('#app').html(content)
-
-          // Fix headings entities to have unique IDs
-          $('h2, h3, h4, h5').each(function () {
-            if (this.id) {
-              this.id = this.id + Math.floor(Math.random() * 2000) + 1
-            }
-          })
-
-          // Fix links to point to correct destination
-          $('a').each(function () {
-            let oldHref = $(this).attr('href')
-            if (oldHref.includes('pdf')) {
-              let newHref = '/irb/' + oldHref
-              $(this).attr('href', newHref)
-            }
-          })
-          // Add Bootstrap table class
-          $('table').each(function () {
-            $(this).addClass('table')
-            $(this).addClass('table-striped')
-          })
-          $('#footer').show()
-          $('#loader').hide()
-        })
-      })()
+    <script>
+      $(function () {
+        $(this).renderSkipLinks()
+        $(this).renderNavbar()
+        $(this).renderContent('policies-and-procedures', '#app')
+      })
     </script>
   </body>
 </html>
