@@ -1,7 +1,14 @@
 /* eslint-disable no-var */
 /* eslint-disable no-undef */
 
-$.fn.renderContent = function (route, target, matchType, sortKey, sortType) {
+$.fn.renderContent = function (
+  title,
+  route,
+  target,
+  matchType,
+  sortKey,
+  sortType
+) {
   $.getJSON('/irb/api.json', function (data) {
     // TODO: Lodash sort by date here if necessary
     var arr = []
@@ -25,6 +32,12 @@ $.fn.renderContent = function (route, target, matchType, sortKey, sortType) {
       content = content + '</div>'
     })
     content = content + '</div>'
+
+    if (title) {
+      $(document).prop('title', 'ICJIA IRB | ' + title)
+    } else {
+      $(document).prop('title', 'ICJIA IRB')
+    }
 
     $(target).html(content)
 
@@ -79,11 +92,11 @@ $.fn.renderFooter = function () {
   $('#footer').show()
 }
 
-window.pageInit = function (route, target, matchType) {
+window.pageInit = function (title, route, target, matchType) {
   $(this).renderPageLoader()
   $(this).renderSkipLinks()
   $(this).renderNavbar()
   $(this).renderPageTitle()
-  $(this).renderContent(route, target, matchType)
+  $(this).renderContent(title, route, target, matchType)
   $(this).renderFooter()
 }
