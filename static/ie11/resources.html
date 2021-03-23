@@ -7,12 +7,18 @@
     <meta name="description" content="ICJIA Institutional Review Board" />
     <meta name="keywords" content="icjia, irb" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+    ></script>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+
     <script src="js/app.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.9.1/minified.js"
@@ -35,12 +41,8 @@
     <div id="navbar"></div>
     <div id="content" role="main" tabindex="-1" id="main">
       <div class="container">
-        <h1 id="pageTitle" class="text-center" style="margin-top: 40px">
-          ICJIA's Institutional Review Board
-        </h1>
-        <div id="loader" class="text-center" style="margin-top: 30px">
-          <img src="img/spinner-2.gif" alt="Loading..." />
-        </div>
+        <div id="pageTitle"></div>
+        <div id="loader"></div>
         <div id="app"></div>
         <div id="footer"></div>
       </div>
@@ -61,7 +63,7 @@
 
     <script>
       $(function () {
-        pageInit('other-resources', '#app')
+        pageInit('other-resources', '#app', 'name')
       })
     </script>
   </body>

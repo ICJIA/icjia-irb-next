@@ -1,8 +1,9 @@
 /* eslint-disable no-var */
 /* eslint-disable no-undef */
 
-$.fn.renderContent = function (route, target, matchType) {
+$.fn.renderContent = function (route, target, matchType, sortKey, sortType) {
   $.getJSON('/irb/api.json', function (data) {
+    // TODO: Lodash sort by date here if necessary
     var arr = []
     $.map(data, function (obj) {
       if (matchType === 'exact') {
@@ -13,6 +14,7 @@ $.fn.renderContent = function (route, target, matchType) {
         arr.push(obj)
       }
     })
+
     var content = '<div>'
     $.each(arr, function (key, value) {
       content =
@@ -62,14 +64,26 @@ $.fn.renderSkipLinks = function () {
   $('#skipLinks').load('/irb/ie11/includes/skipLinks.html')
 }
 
+$.fn.renderPageTitle = function () {
+  // TODO: Need to do this programmatically.
+  $('#pageTitle').load('/irb/ie11/includes/pageTitle.html')
+}
+
+$.fn.renderPageLoader = function () {
+  // TODO: Need to do this programmatically.
+  $('#loader').load('/irb/ie11/includes/loader.html')
+}
+
 $.fn.renderFooter = function () {
   // TODO: Need to do this programmatically.
   $('#footer').load('/irb/ie11/includes/footer.html')
 }
 
 window.pageInit = function (route, target, matchType) {
+  $(this).renderPageLoader()
   $(this).renderSkipLinks()
   $(this).renderNavbar()
+  $(this).renderPageTitle()
   $(this).renderContent(route, target, matchType)
   $(this).renderFooter()
 }
