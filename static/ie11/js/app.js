@@ -67,10 +67,9 @@ $.fn.renderFooter = function () {
   $('#footer').load('/irb/ie11/includes/footer.html')
 }
 
-var pageInit = function (route, target, matchType) {
+window.pageInit = function (route, target, matchType) {
   $(this).renderSkipLinks()
   $(this).renderNavbar()
   $(this).renderContent(route, target, matchType)
   $(this).renderFooter()
 }
-window.pageInit = pageInit
