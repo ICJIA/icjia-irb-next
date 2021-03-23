@@ -13,6 +13,16 @@
         e.className = e.className.replace('no-js', 'js')
       })(document.documentElement)
     </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.9.1/minified.js"
+      integrity="sha512-4I6KlXURpSYQwerMyq1LvMPu5YXs35Zim0abhd3VSrHVreGcKZvfzC97ZBgS3qTChQUBEyHM8mkePNbCdKLeug=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+      integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+      crossorigin="anonymous"
+    ></script>
 
     <link
       rel="stylesheet"
@@ -20,7 +30,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.includes%2CString.prototype.includes"></script>
+
     <link rel="stylesheet" href="ie11.css" />
   </head>
 
@@ -78,8 +88,13 @@
 
     <div id="content" role="main" tabindex="-1" id="main">
       <div class="container">
-        <h1 id="pageTitle">ICJIA's Institutional Review Board</h1>
-        <div id="app">LOADING</div>
+        <h1 id="pageTitle" class="text-center" style="margin-top: 40px">
+          ICJIA's Institutional Review Board
+        </h1>
+        <div id="loader" class="text-center" style="margin-top: 30px">
+          <img src="Spinner-2.gif" alt="Loading..." />
+        </div>
+        <div id="app"></div>
         <div class="text-center" id="footer">
           This site is optimized for Internet Explorer 11.<br />
           <a href="https://icjia.illinois.gov/irb/"
@@ -107,23 +122,24 @@
 
     <!-- Custom script starts here -->
 
-    <script>
+    <script type="text/babel">
       ;(function () {
-        var jqxhr = $.getJSON('/irb/api.json', function (data) {
-          var arr = []
+        let jqxhr = $.getJSON('/irb/api.json', function (data) {
+          let arr = []
           $.map(data, function (obj) {
             if (obj.route.includes('meetings')) {
               arr.push(obj)
             }
           })
-          var content = '<div>'
+          let content = '<div>'
           $.each(arr, function (key, value) {
             content =
               content +
-              '<div class="content-item" style="padding-bottom: 30px; margin-bottom: 50px; border-bottom: 1px solid #333">'
-            content = content + '<h2 id=' + key + '>' + value.title + '</h2>'
-            content = content + value.html
-            content = content + '</div>'
+              `
+              <div class="content-item" style="padding-bottom: 30px; margin-bottom: 50px; border-bottom: 1px solid #333">
+                <h2 id=${key}>${value.title} </h2>
+                  ${value.html}</div>
+              `
           })
           content = content + '</div>'
 
@@ -138,9 +154,9 @@
 
           // Fix links to point to correct destination
           $('a').each(function () {
-            var oldHref = $(this).attr('href')
+            let oldHref = $(this).attr('href')
             if (oldHref.includes('pdf')) {
-              var newHref = '/irb/' + oldHref
+              let newHref = '/irb/' + oldHref
               $(this).attr('href', newHref)
             }
           })
@@ -150,6 +166,7 @@
             $(this).addClass('table-striped')
           })
           $('#footer').show()
+          $('#loader').hide()
         })
       })()
     </script>

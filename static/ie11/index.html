@@ -13,6 +13,16 @@
         e.className = e.className.replace('no-js', 'js')
       })(document.documentElement)
     </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.9.1/minified.js"
+      integrity="sha512-4I6KlXURpSYQwerMyq1LvMPu5YXs35Zim0abhd3VSrHVreGcKZvfzC97ZBgS3qTChQUBEyHM8mkePNbCdKLeug=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+      integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+      crossorigin="anonymous"
+    ></script>
 
     <link
       rel="stylesheet"
@@ -20,15 +30,15 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="ie11.css" />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.includes%2CString.prototype.includes"></script>
   </head>
 
   <body>
     <header role="banner" class="site-header" id="banner">
       <nav class="site-header-quick-menu" aria-label="Skip to content">
         <a href="#content" class="offscreen">Skip to content</a>
-         <a href="/irb/" class="offscreen">Skip to full site</a>
+        <a href="/irb/" class="offscreen">Skip to full site</a>
       </nav>
     </header>
 
@@ -53,10 +63,8 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="meetings.html">Meetings</a>
@@ -78,17 +86,21 @@
 
     <div id="content" role="main" tabindex="-1" id="main">
       <div class="container">
-        <h1 id="pageTitle">ICJIA's Institutional Review Board</h1>
-        <div id="app">LOADING</div>
+        <h1 id="pageTitle" class="text-center" style="margin-top: 40px">
+          ICJIA's Institutional Review Board
+        </h1>
+        <div id="loader" class="text-center" style="margin-top: 30px">
+          <img src="Spinner-2.gif" alt="Loading..." />
+        </div>
+        <div id="app"></div>
         <div class="text-center" id="footer">
-        This site is optimized for Internet Explorer 11.<br/>
-          <a href ="https://icjia.illinois.gov/irb/"
+          This site is optimized for Internet Explorer 11.<br />
+          <a href="https://icjia.illinois.gov/irb/"
             >Click here to see the full IRB site.</a
           >
-          </div>
+        </div>
       </div>
-
-    <div role="contentinfo" class="site-footer text-center"></div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -108,52 +120,53 @@
 
     <!-- Custom script starts here -->
 
-    <script>
-      ;(function() {
-        var jqxhr = $.getJSON('/irb/api.json', function (data) {
-        var arr = []
-        $.map(data, function (obj) {
-          if (obj.route === '/') {
-            arr.push(obj)
-          }
-        })
-        var content = '<div>'
-        $.each(arr, function (key, value) {
-          content =
-            content +
-            '<div class="content-item" style="padding-bottom: 30px; margin-bottom: 50px; border-bottom: 1px solid #333">'
-          content = content + '<h2 id=' + key + '>' + value.title + '</h2>'
-          content = content + value.html
+    <script type="text/babel">
+      ;(function () {
+        let jqxhr = $.getJSON('/irb/api.json', function (data) {
+          let arr = []
+          $.map(data, function (obj) {
+            if (obj.route === '/') {
+              arr.push(obj)
+            }
+          })
+          let content = '<div>'
+          $.each(arr, function (key, value) {
+            content =
+              content +
+              `
+              <div class="content-item" style="padding-bottom: 30px; margin-bottom: 50px; border-bottom: 1px solid #333">
+                <h2 id=${key}>${value.title} </h2>
+                  ${value.html}</div>
+              `
+          })
           content = content + '</div>'
-        })
-        content = content + '</div>'
 
-        $('#app').html(content)
+          $('#app').html(content)
 
-        // Fix headings entities to have unique IDs
-        $('h2, h3, h4, h5').each(function () {
-          if (this.id) {
-            this.id = this.id + Math.floor(Math.random() * 2000) + 1
-          }
-        })
+          // Fix headings entities to have unique IDs
+          $('h2, h3, h4, h5').each(function () {
+            if (this.id) {
+              this.id = this.id + Math.floor(Math.random() * 2000) + 1
+            }
+          })
 
-        // Fix links to point to correct destination
-        $('a').each(function () {
-          var oldHref = $(this).attr('href')
-          if (oldHref.includes('pdf')) {
-            var newHref = '/irb/' + oldHref
-            $(this).attr('href', newHref)
-          }
+          // Fix links to point to correct destination
+          $('a').each(function () {
+            let oldHref = $(this).attr('href')
+            if (oldHref.includes('pdf')) {
+              let newHref = '/irb/' + oldHref
+              $(this).attr('href', newHref)
+            }
+          })
+          // Add Bootstrap table class
+          $('table').each(function () {
+            $(this).addClass('table')
+            $(this).addClass('table-striped')
+          })
+          $('#footer').show()
+          $('#loader').hide()
         })
-        // Add Bootstrap table class
-        $('table').each(function () {
-          $(this).addClass('table')
-          $(this).addClass('table-striped')
-        })
-        $('#footer').show()
-      })
       })()
-
     </script>
   </body>
 </html>
