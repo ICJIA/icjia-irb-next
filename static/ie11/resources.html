@@ -110,6 +110,7 @@
     <!-- Custom script starts here -->
 
     <script>
+      ;(function () {
       var jqxhr = $.getJSON('/irb/api.json', function (data) {
         var arr = []
         $.map(data, function (obj) {
@@ -154,7 +155,8 @@
         })
         $('#footer').show()
       })
-      $(document).ready(function () {})
+    })()
+
     </script>
   </body>
 </html>

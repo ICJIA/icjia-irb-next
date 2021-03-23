@@ -108,48 +108,50 @@
     <!-- Custom script starts here -->
 
     <script>
-      var jqxhr = $.getJSON('/irb/api.json', function (data) {
-        var arr = []
-        $.map(data, function (obj) {
-          if (obj.route.includes('members-and-staff')) {
-            arr.push(obj)
-          }
-        })
-        var content = '<div>'
-        $.each(arr, function (key, value) {
-          content =
-            content +
-            '<div class="content-item" style="padding-bottom: 30px; margin-bottom: 50px; border-bottom: 1px solid #333">'
-          content = content + '<h2 id=' + key + '>' + value.title + '</h2>'
-          content = content + value.html
+      ;(function () {
+        var jqxhr = $.getJSON('/irb/api.json', function (data) {
+          var arr = []
+          $.map(data, function (obj) {
+            if (obj.route.includes('members-and-staff')) {
+              arr.push(obj)
+            }
+          })
+          var content = '<div>'
+          $.each(arr, function (key, value) {
+            content =
+              content +
+              '<div class="content-item" style="padding-bottom: 30px; margin-bottom: 50px; border-bottom: 1px solid #333">'
+            content = content + '<h2 id=' + key + '>' + value.title + '</h2>'
+            content = content + value.html
+            content = content + '</div>'
+          })
           content = content + '</div>'
-        })
-        content = content + '</div>'
 
-        $('#app').html(content)
+          $('#app').html(content)
 
-        // Fix headings entities to have unique IDs
-        $('h2, h3, h4, h5').each(function () {
-          if (this.id) {
-            this.id = this.id + Math.floor(Math.random() * 2000) + 1
-          }
-        })
+          // Fix headings entities to have unique IDs
+          $('h2, h3, h4, h5').each(function () {
+            if (this.id) {
+              this.id = this.id + Math.floor(Math.random() * 2000) + 1
+            }
+          })
 
-        // Fix links to point to correct destination
-        $('a').each(function () {
-          var oldHref = $(this).attr('href')
-          if (oldHref.includes('pdf')) {
-            var newHref = '/irb/' + oldHref
-            $(this).attr('href', newHref)
-          }
+          // Fix links to point to correct destination
+          $('a').each(function () {
+            var oldHref = $(this).attr('href')
+            if (oldHref.includes('pdf')) {
+              var newHref = '/irb/' + oldHref
+              $(this).attr('href', newHref)
+            }
+          })
+          // Add Bootstrap table class
+          $('table').each(function () {
+            $(this).addClass('table')
+            $(this).addClass('table-striped')
+          })
+          $('#footer').show()
         })
-        // Add Bootstrap table class
-        $('table').each(function () {
-          $(this).addClass('table')
-          $(this).addClass('table-striped')
-        })
-        $('#footer').show()
-      })
+      })()
     </script>
   </body>
 </html>

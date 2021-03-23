@@ -109,7 +109,8 @@
     <!-- Custom script starts here -->
 
     <script>
-      var jqxhr = $.getJSON('/irb/api.json', function (data) {
+      ;(function() {
+        var jqxhr = $.getJSON('/irb/api.json', function (data) {
         var arr = []
         $.map(data, function (obj) {
           if (obj.route === '/') {
@@ -151,6 +152,8 @@
         })
         $('#footer').show()
       })
+      })()
+
     </script>
   </body>
 </html>
