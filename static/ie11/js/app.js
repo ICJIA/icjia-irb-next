@@ -53,11 +53,18 @@ $.fn.renderContent = function (route, target, matchType) {
 }
 
 $.fn.renderNavbar = function () {
-  // TODO: Not SEO friendly. Need to do this programmatically.
+  // TODO: Need to do this programmatically.
   $('#navbar').load('/irb/ie11/includes/navbar.html')
 }
 
 $.fn.renderSkipLinks = function () {
-  // TODO: Not SEO friendly. Need to do this programmatically.
+  // TODO: Need to do this programmatically.
   $('#skipLinks').load('/irb/ie11/includes/skipLinks.html')
 }
+
+var appInit = function () {
+  $(this).renderSkipLinks()
+  $(this).renderNavbar()
+  $(this).renderContent('/', '#app', 'exact')
+}
+window.appInit = appInit
