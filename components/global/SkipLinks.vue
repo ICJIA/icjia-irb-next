@@ -7,7 +7,7 @@
     <a
       id="skip-ie11"
       class="offscreen"
-      href="/irb/ie11/"
+      href="/irb/ie11/index.html"
       aria-label="Skip to IE11 friendly"
     >
       Skip to Internet Explorer friendly site
