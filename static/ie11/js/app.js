@@ -49,7 +49,6 @@ $.fn.renderContent = function (route, target, matchType, sortKey, sortType) {
       $(this).addClass('table')
       $(this).addClass('table-striped')
     })
-    $('#footer').show()
     $('#loader').hide()
   })
 }
@@ -77,6 +76,7 @@ $.fn.renderPageLoader = function () {
 $.fn.renderFooter = function () {
   // TODO: Need to do this programmatically.
   $('#footer').load('/irb/ie11/includes/footer.html')
+  $('#footer').show()
 }
 
 window.pageInit = function (route, target, matchType) {
